@@ -1,8 +1,5 @@
+
 # Awesome-Rubrics
-A curated list of resources (surveys, papers, benchmarks, and opensource projects) on Rubrics
-
-
-# Rubric RL: A Curated Survey
 
 > **Definition**: Rubric-based Reinforcement Learning (Rubric RL) uses structured
 > evaluation criteria (rubrics) as reward signals to train and align LLMs and AI agents.
@@ -557,4 +554,13 @@ Comprehensive evaluation infrastructure for rubric RL: benchmark datasets, rubri
 <a id="cite-84"></a>[84] **Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning**. *NeurIPS2025*. [[OpenReview]](https://openreview.net/forum?id=wPdBe9zxNr) [[PDF]](https://openreview.net/pdf/f11013ca9dbe05459e89557ddb9b09d292b6f6ba.pdf)  
 
 ## Citetation
+```
+@misc{xiao2026awesome_rubrics,
+  author       = {},
+  title        = {Awesome-Rubrics: A Curated Repository of Evaluation Rubrics},
+  year         = {2026},
+  url          = {https://github.com/Hongru0306/Awesome-Rubrics},
+  note         = {GitHub repository, accessed March 23, 2026}
+}
+```
 ```
