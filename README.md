@@ -563,4 +563,3 @@ Comprehensive evaluation infrastructure for rubric RL: benchmark datasets, rubri
   note         = {GitHub repository, accessed March 23, 2026}
 }
 ```
-```
