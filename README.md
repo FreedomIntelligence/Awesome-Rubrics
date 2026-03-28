@@ -22,7 +22,7 @@
       - [Post-training-SFT](#post-training-sft)
       - [Post-training-OPD&DPO](#post-training-opddpo)
       - [Post-training-RL Algorithm Optimization](#post-training-rl-algorithm-optimization)
-      - [Post-training-Reward Signal Optimization (GDPO)](#post-training-reward-signal-optimization-gdpo)
+      - [Post-training-Reward Signal Optimization](#post-training-reward-signal-optimization)
       - [Post-training-Curriculum Learning](#post-training-curriculum-learning)
       - [Post-training-Self-evolution](#post-training-self-evolution)
   - [Evaluation](#evaluation)
@@ -46,6 +46,8 @@
 
 > *Definitions, boundaries, and core components of Rubrics as evaluation/reward criteria for LLMs.*
 
+The papers in this section explore the use of rubrics as evaluative and reward criteria for enhancing large language models (LLMs), focusing on how Rigorous Rubric Feedback (RRF) and Causal Rubrics can guide model improvements in domains with implicit evaluation standards. QuRL and "Rubrics as Rewards" demonstrate the efficacy of Reinforcement Learning from Verifiable Rewards (RLVR) in tasks with clear correctness signals, like math and coding, but highlight difficulties when extending to open-ended, real-world tasks. "Incentivizing LLMs to Self-Verify" and "Robust Reward Modeling via Causal Rubrics" address the risk of reward hacking and the challenge of ensuring robust evaluation in complex reasoning tasks. A significant open problem remains the high cost and complexity of applying diverse rubrics across varied and implicit task evaluations, as noted in "Reinforcement Learning from Dynamic Critic Feedback for Free-Form Generations."
+
 1. **QuRL: Rubrics As Judge For Open-Ended Question Answering**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=DrhWTuhtYq) · [PDF](https://openreview.net/attachment?id=DrhWTuhtYq&name=pdf)
 
@@ -66,6 +68,8 @@
 
 > *Rubric dimensions, scoring levels, and structured expression format of rubrics.*
 
+The Cat-PO paper exemplifies recent advances in managing semantic coherence in Multi-modal Large Language Models (MLLMs) by leveraging cross-modal adaptive token-rewards for preference optimization. This approach addresses the challenge of hallucinations in MLLMs, which generate semantically inconsistent textual contents across varied modalities. A key technique involves cross-modal token-reward systems, aiming to enhance alignment between different input and output modalities. Despite these innovations, ensuring consistent semantic fidelity in complex, multi-modal contexts remains an open challenge in the field.
+
 1. **Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=iIbe6qDN0A) · [PDF](https://openreview.net/attachment?id=iIbe6qDN0A&name=pdf)
 
@@ -80,11 +84,13 @@
 
 > *Why structured Rubrics/verifiable rewards are necessary in the LLM era.*
 
+The incorporation of structured rubrics and verifiable rewards in post-training processes is increasingly vital to address the challenges associated with large language models (LLMs), including reward sparsity and computational inefficiencies. Papers such as "Hybrid Reinforcement" emphasize deterministic checkers for more reliable feedback, while "Your Models Have Thought Enough" introduces methods to limit computational overhead in reasoning by curbing overthinking. "Chasing the Tail" highlights the problem of reward hacking with reinforcement fine-tuning (RFT) and proposes effective rubric-based reward strategies to ensure higher output quality. Lastly, "RLBFF" explores the integration of binary flexible feedback to bridge human and verifiable reward avenues, posing the need for efficient feedback mechanisms in LLM post-training.
+
 1. **Hybrid Reinforcement: when reward is sparse, better to be dense**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=0CajQNVKyB) · [PDF](https://openreview.net/attachment?id=0CajQNVKyB&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0CajQNVKyB) · [PDF](https://openreview.net/attachment?id=0CajQNVKyB&name=pdf)
 
 2. **Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=2u5ZRzDyS0) · [PDF](https://openreview.net/attachment?id=2u5ZRzDyS0&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=2u5ZRzDyS0) · [PDF](https://openreview.net/attachment?id=2u5ZRzDyS0&name=pdf)
 
 3. **Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=pBjy4ek2QV) · [PDF](https://openreview.net/attachment?id=pBjy4ek2QV&name=pdf)
@@ -101,16 +107,20 @@
 
 > *Synthetic data generated with rubric-style structured feedback for LLM training.*
 
+In the realm of synthetic data generation for LLM training, recent research showcases innovative methods like OptimSyn, which uses influence-guided rubric optimization to improve the quality of synthetic data and enhance subsequent model performance. Additionally, the challenge of partial observability and delayed feedback in LLM agent supervision is tackled by Spinning Straw into Gold, which introduces a relabeling technique for LLM agent trajectories, refining them to provide successful demonstrations. These studies emphasize overcoming the bottleneck of supervision availability and maximizing LLM training efficacy, addressing existing challenges in scalability and data sufficiency.
+
 1. **OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=vFcm5sOitq) · [PDF](https://openreview.net/attachment?id=vFcm5sOitq&name=pdf)
 
 2. **Spinning Straw into Gold: Relabeling LLM Agent Trajectories in Hindsight for Successful Demonstrations**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=QNfmqMSR7r) · [PDF](https://openreview.net/attachment?id=QNfmqMSR7r&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=QNfmqMSR7r) · [PDF](https://openreview.net/attachment?id=QNfmqMSR7r&name=pdf)
 
 
 #### Real Data
 
 > *Rubric signals from human preferences, real interactions, or authentic human annotations.*
+
+This section investigates the integration of human-derived signals into reward models to enhance the alignment of large language models with authentic human values, emphasizing ordinal probabilistic reward frameworks from preferences. Featured methods include policy discriminators as general reward models and large-scale data utilization such as the DeepMath-103K dataset to advance logical reasoning. Key challenges addressed across these papers include developing sufficiently complex training datasets for reasoning and overcoming limitations of current reward formulations that may not fully capture intricate human interactions and annotations.
 
 1. **Learning Ordinal Probabilistic Reward from Preferences**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0Vf5trUAVF) · [PDF](https://openreview.net/attachment?id=0Vf5trUAVF&name=pdf)
@@ -136,8 +146,10 @@
 
 > *Rubric constraints, filtering, and reweighting applied in Supervised Fine-Tuning.*
 
+This section surveys SFT-stage techniques that explicitly incorporate rubric-like constraints via data selection, reweighting, and context shaping. Multi-Feature Quantized Self-Attention (MFQSA) modifies attention computation during SFT using quantized sensitive-attribute features to debias internal representations and reduce fairness gaps. ContextIF augments SFT with a learned context reward that scores and selects instruction–context pairs, effectively reweighting training data toward examples that elicit better instruction following and generalization to novel tasks. P-GenRM introduces a personalized generative reward model with test-time user-based scaling, enabling user-specific preference conditioning during alignment; open challenges include obtaining reliable fine-grained signals (fairness labels, context rewards, and personal preferences) and maintaining robustness and generalization under such highly targeted supervision.
+
 1. **Multi-Feature Quantized Self-Attention for Fair Large Language Models**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=0UvgQxsi7S) · [PDF](https://openreview.net/attachment?id=0UvgQxsi7S&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0UvgQxsi7S) · [PDF](https://openreview.net/attachment?id=0UvgQxsi7S&name=pdf)
 
 2. **ContextIF: Enhancing Instruction-Following through Context Reward**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=IuscGSmfEf) · [PDF](https://openreview.net/attachment?id=IuscGSmfEf&name=pdf)
@@ -150,17 +162,19 @@
 
 > *Fine-grained rubric signals introduced in DPO or preference optimization.*
 
+This section examines recent advancements in fine-grained rubric signals for DPO and preference optimization, focusing on techniques that enhance LLM alignment with human preferences. Key approaches include ActiveDPO, which emphasizes sample-efficient direct preference optimization, and PALC, which uses logit calibration for preference alignment. Challenges identified across these studies include the computational demands of aligning models and the difficulty of accounting for individual human preferences, as noted in "Capturing Individual Human Preferences with Reward Features." Open problems persist in optimizing offline learning strategies as explored in "Offline Preference-Based Value Optimization."
+
 1. **ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=RD4XgyVyGh) · [PDF](https://openreview.net/attachment?id=RD4XgyVyGh&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=RD4XgyVyGh) · [PDF](https://openreview.net/attachment?id=RD4XgyVyGh&name=pdf)
 
 2. **Rectifying Shortcut Behaviors in Preference-based Reward Learning**  
    *NeurIPS 2025*  [OpenReview](https://openreview.net/forum?id=m51t6RKfGH) · [PDF](https://openreview.net/pdf/68f64407c11f7fe9069c3e63b8c90bfbf679caa6.pdf)
 
 3. **PALC: Preference Alignment via Logit Calibration**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=0cmuYj3WeG) · [PDF](https://openreview.net/attachment?id=0cmuYj3WeG&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0cmuYj3WeG) · [PDF](https://openreview.net/attachment?id=0cmuYj3WeG&name=pdf)
 
 4. **Offline Preference-Based Value Optimization**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=9cUdn8GKId) · [PDF](https://openreview.net/attachment?id=9cUdn8GKId&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=9cUdn8GKId) · [PDF](https://openreview.net/attachment?id=9cUdn8GKId&name=pdf)
 
 5. **Capturing Individual Human Preferences with Reward Features**  
    *NeurIPS 2025*  [OpenReview](https://openreview.net/forum?id=TgCkj4uEPl) · [PDF](https://openreview.net/pdf/556cfcd15c657ecd28cbd21afadcd2e31ec0a60c.pdf)
@@ -172,6 +186,8 @@
 ##### Post-training-RL Algorithm Optimization
 
 > *Optimization of PPO/GRPO algorithms under rubric/verifiable rewards.*
+
+This section surveys recent advances in the optimization of PPO and GRPO algorithms through various verifiable reward mechanisms, focusing on fine-tuning large language models (LLMs) for enhanced reasoning and search capabilities. Techniques such as DRPO and Group Verification-based Policy Optimization are central to improving model efficiency and reasoning capabilities by using decoupled reward optimizations and group techniques, respectively. However, open challenges persist, such as the costly requirement for large-scale human-labeled data as noted in BLEUBERI and the need for enhanced inference efficiency addressed in frameworks like MARTI and strategies like ShorterBetter. Additionally, approaches like KTAE and Self-Aligned Reward explore rule-based and self-aligned optimizations, which highlight the ongoing effort to balance effective model training with operational efficiency.
 
 1. **Repurposing Synthetic Data for Fine-grained Search Agent Supervision**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=CByVWPpb8T) · [PDF](https://openreview.net/attachment?id=CByVWPpb8T&name=pdf)
@@ -201,18 +217,20 @@
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=3owSlsYDQf) · [PDF](https://openreview.net/attachment?id=3owSlsYDQf&name=pdf)
 
 
-##### Post-training-Reward Signal Optimization (GDPO)
+##### Post-training-Reward Signal Optimization
 
 > *Reward modeling, judge calibration, and reward shaping using rubrics for LLMs.*
 
+In the domain of post-training reward signal optimization for large language models (LLMs), the surveyed papers address critical issues through diverse methodologies like Hybrid Reinforcement, SophiaVL-R1, and TraPO, which focus on densifying sparse feedback to enhance reasoning capabilities. Techniques such as ARM-FM and Text2Grad innovate by utilizing automated reward mechanisms and natural language feedback to refine the reward shaping process. Challenges highlighted include the complexity of specifying accurate reward functions and calibrating judged feedback, as discussed in works like Checklists Are Better Than Reward Models and Rewarding Doubt. These studies underscore the difficulty of aligning rewards with nuanced tasks while maintaining model robustness and interpretability.
+
 1. **Hybrid Reinforcement: when reward is sparse, better to be dense**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=0CajQNVKyB) · [PDF](https://openreview.net/attachment?id=0CajQNVKyB&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0CajQNVKyB) · [PDF](https://openreview.net/attachment?id=0CajQNVKyB&name=pdf)
 
 2. **SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0tzvmjMcXC) · [PDF](https://openreview.net/attachment?id=0tzvmjMcXC&name=pdf)
 
 3. **TraPO: A Semi-Supervised Reinforcement Learning Framework for Boosting LLM Reasoning**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=3K1y4KbWAx) · [PDF](https://openreview.net/attachment?id=3K1y4KbWAx&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=3K1y4KbWAx) · [PDF](https://openreview.net/attachment?id=3K1y4KbWAx&name=pdf)
 
 4. **R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=4Ewgw9M2xE) · [PDF](https://openreview.net/attachment?id=4Ewgw9M2xE&name=pdf)
@@ -234,6 +252,8 @@
 
 > *Curriculum learning staged by difficulty/dimension with rubric rewards.*
 
+This section explores post-training curriculum learning approaches that leverage reinforcement learning to enhance reasoning in multimodal large language models (MLLMs) and large reasoning models (LRMs). SophiaVL-R1 employs rule-based reinforcement learning with thinking rewards to improve reasoning abilities, while "Smarter Not Harder" introduces ability-adaptive reward shaping to address the challenges of sparse feedback in conventional RL methods. "Teaching Language Models to Evolve with Users" investigates personalized alignment through dynamic profile modeling to facilitate effective user-centric dialogues. A key challenge remains in refining the granularity of reward mechanisms to ensure efficient model training across varying difficulty dimensions.
+
 1. **SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=0tzvmjMcXC) · [PDF](https://openreview.net/attachment?id=0tzvmjMcXC&name=pdf)
 
@@ -247,6 +267,8 @@
 ##### Post-training-Self-evolution
 
 > *Self-reflection, self-rewarding, and self-training loops in LLMs.*
+
+This section explores post-training self-evolution techniques in language models, focusing on self-reflection, self-rewarding, and self-training loops. Vision-SR1 tackles visual hallucinations in Vision-Language Models with reasoning decomposition and multi-reward policy optimization. Critique-RL employs a two-stage reinforcement learning framework for critiquing outputs to enhance model feedback mechanisms. Additionally, the challenge of consistent persona simulation in interactive applications is addressed with multi-turn reinforcement in human-like contexts, while another approach incentivizes LLMs to self-verify their answers, highlighting the ongoing quest for reliable self-assessment and enhancement in complex reasoning tasks.
 
 1. **Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=C1M4ETatgM) · [PDF](https://openreview.net/attachment?id=C1M4ETatgM&name=pdf)
@@ -266,6 +288,8 @@
 #### Evaluation Methods
 
 > *Rubric-based evaluation methods, LLM-judge reliability and consistency analysis.*
+
+The papers in this section explore advanced rubric-based evaluation methods for Large Language Models (LLM) judges, focusing on techniques like reinforcement learning to enhance reasoning (Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning and J1) and multilingual evaluation challenges (mR3). Bayesian frameworks (Don’t Pass@$k$) and reward modeling approaches (RM-R1) are highlighted to address the instability and scalability issues inherent in LLM evaluation. Despite these innovations, challenges remain in achieving language proficiency across diverse languages (MENLO) and ensuring stable, reliable evaluation under constrained computational scenarios.
 
 1. **Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=AXNRILww9c) · [PDF](https://openreview.net/attachment?id=AXNRILww9c&name=pdf)
@@ -302,8 +326,10 @@
 
 > *Benchmarks and datasets specifically for rubric-trained or rubric-evaluated LLMs.*
 
+Evaluation benchmarks for rubric-trained LLMs encompass diverse domains and tasks, as demonstrated across five papers. ProfBench emphasizes rubric-based assessments in professional tasks, while ExpertLongBench tackles long-form generation using structured checklists, highlighting accuracy and expert-level skill requirements. StoryAlign and VerifyBench focus on reward model training, with StoryAlign refining narrative cohesion and VerifyBench integrating reference-based systems for enhanced reasoning. A central challenge remains ensuring evaluation metrics effectively capture nuanced model performance across micrometaphysical simulations, professional judgment, and expert content generation.
+
 1. **MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=7pQv7qitFV) · [PDF](https://openreview.net/attachment?id=7pQv7qitFV&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=7pQv7qitFV) · [PDF](https://openreview.net/attachment?id=7pQv7qitFV&name=pdf)
 
 2. **ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=VwNzKPqBxk) · [PDF](https://openreview.net/attachment?id=VwNzKPqBxk&name=pdf)
@@ -326,6 +352,8 @@
 
 > *Rubric RL practices in text reasoning, dialogue, and generation tasks.*
 
+The Modality-Text section examines innovative approaches in Rubric RL practices, focusing on reasoning, dialogue, and generation tasks in Large Language Models (LLMs). Key themes include personalized alignment for defensively reasoning models, such as in "Aligning Deep Implicit Preferences," which addresses challenges in inferring user preferences and intentions. Techniques like CoT (chain-of-thought) strategies, as explored in "The CoT Encyclopedia," aim to better understand and predict reasoning patterns in LLMs, though the comprehensive analysis of these strategies remains limited. Additionally, "RLVER" highlights the significant gap in emotional intelligence, advocating for reinforcement learning using verifiable emotion rewards to enhance empathetic interaction capabilities. These papers collectively tackle ongoing challenges in balancing cognitive and emotional intelligence in language models, alongside improving alignment and reasoning inference mechanisms.
+
 1. **Aligning Deep Implicit Preferences by Learning to Reason Defensively**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=ZA7i5Otjqd) · [PDF](https://openreview.net/attachment?id=ZA7i5Otjqd&name=pdf)
 
@@ -339,6 +367,8 @@
 #### Modality-Visual
 
 > *Rubric RL practices in visual/VLM/image/video tasks.*
+
+Within the realm of visual modalities for Rubric RL applications, the surveyed papers collectively address the enhancement of reasoning capabilities in vision-language models (VLMs) and multi-modal large language models (MLLMs). Key techniques such as Chain-of-Thought reasoning, exemplified in "Towards Faithful Reasoning in Remote Sensing," are adapted to manage nuanced tasks in remote sensing, while Time-R1 and Perception-R1 investigate post-training frameworks to improve perception and temporal video grounding. Despite these advances, challenges remain in accurately aligning model outputs with human preferences and effectively integrating reasoning processes for complex spatial-temporal tasks, as evidenced by efforts in Generative RLHF-V and VLM-R³. The ongoing struggle to achieve dynamic and reliable reasoning through multimodal approaches continues to be a pivotal challenge.
 
 1. **Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded GeoSpatial Chain-of-Thought for Vision-Language Models**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=lJ7zecny2e) · [PDF](https://openreview.net/attachment?id=lJ7zecny2e&name=pdf)
@@ -369,8 +399,10 @@
 
 > *Rubric RL practices in speech/audio tasks.*
 
+Within the realm of Rubric RL practices for speech and audio tasks, this section details advancements like FlexiVoice, which innovatively combines flexible style control and zero-shot voice cloning, utilizing natural-language instruction for TTS synthesis. Meanwhile, SpeechJudge addresses the alignment of large generative models with human feedback in assessing speech naturalness, highlighting the absence of large-scale human preference datasets as a critical obstacle. These studies emphasize the need for enhanced human-model interaction and evaluation frameworks to surmount these impediments and improve the realism and adaptability of speech synthesis systems.
+
 1. **TTS Can Speak in Any Style with Any Voice**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=F7GmbfyVg9) · [PDF](https://openreview.net/attachment?id=F7GmbfyVg9&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=F7GmbfyVg9) · [PDF](https://openreview.net/attachment?id=F7GmbfyVg9&name=pdf)
 
 2. **SpeechJudge: Towards Human-Level Judgment for Speech Naturalness**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=I9ED9VWZq6) · [PDF](https://openreview.net/attachment?id=I9ED9VWZq6&name=pdf)
@@ -382,19 +414,23 @@
 
 > *Rubric RL training and evaluation in medical scenarios.*
 
+In the medical domain of rubric RL training and evaluation, the papers explore enhancements in conversational agents and coding-based reasoning for clinical scenarios. ATPO introduces Adaptive Tree Policy Optimization for effectively navigating multi-turn medical dialogues to address incomplete information during diagnosis. Doctor-R1 leverages experiential agentic RL to refine clinical inquiry skills, focusing on precise medical decision-making and empathetic consultation abilities. MedAgentGym presents a scalable training environment promoting code-centric reasoning within biomedical data science, spotlighting the challenge of integrating LLMs with complex heterogeneous data. These efforts underscore ongoing challenges in optimizing dialogue strategies and improving the contextual understanding of language models in diverse medical interactions.
+
 1. **ATPO: ADAPTIVE TREE POLICY OPTIMIZATION FOR MULTI-TURN MEDICAL DIALOGUE**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=2bv3B8B9bl) · [PDF](https://openreview.net/attachment?id=2bv3B8B9bl&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=2bv3B8B9bl) · [PDF](https://openreview.net/attachment?id=2bv3B8B9bl&name=pdf)
 
 2. **Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=vQGHTyL0Jw) · [PDF](https://openreview.net/attachment?id=vQGHTyL0Jw&name=pdf)
 
 3. **MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science**  
-   *ICLR*  [OpenReview](https://openreview.net/forum?id=jHDZEUgS4r) · [PDF](https://openreview.net/attachment?id=jHDZEUgS4r&name=pdf)
+   *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=jHDZEUgS4r) · [PDF](https://openreview.net/attachment?id=jHDZEUgS4r&name=pdf)
 
 
 #### Domain-Code
 
 > *Rubric RL training and evaluation in code generation/debugging.*
+
+This section of the survey delves into the training and evaluation of Rubric RL methods in code generation and debugging, emphasizing Reinforcement Learning with Verifiable Rewards (RLVR). Representative techniques include the Process-Verified RL approach for theorem proving via Lean and the Critique-Coder method that integrates critique-based reinforcement for coder models. Main challenges identified involve the complexity of optimization modeling, such as in the Solver-Informed RL work, and the need for enhanced reasoning capabilities in LLMs, explored in QiMeng-CodeV-R1 and SWE-RL research. Open problems remain in achieving consistent performance across diverse tasks and languages.
 
 1. **Process-Verified Reinforcement Learning for Theorem Proving via Lean**  
    *ICLR 2026*  [OpenReview](https://openreview.net/forum?id=P00k4DFaXF) · [PDF](https://openreview.net/attachment?id=P00k4DFaXF&name=pdf)
@@ -418,6 +454,8 @@
 #### Domain-Agent
 
 > *Rubric RL training and evaluation in Web/Tool/multi-agent systems.*
+
+The Domain-Agent section explores advanced techniques in Rubric RL for training and evaluating agents within web, tool, and multi-agent systems. Highlighted methods such as AlphaAlign and WebArbiter demonstrate the implementation of adaptive reasoning and incentive-based safety alignment to address vulnerabilities in large language models (LLMs) across domains like math, code, and web tasks. Key challenges include developing efficient agentic retrieval-augmented generation, as seen in HiPRAG, and integrating external tools to overcome LLM limitations without compromising system security. While approaches such as ToolRL and UI-Genie strive to enhance agent-generalization capabilities, ongoing research focuses on refining reward models to balance process versus outcome-oriented learning.
 
 1. **Reasoning as an Adaptive Defense for Safety**  
    *NeurIPS 2025*  [OpenReview](https://openreview.net/forum?id=2NLHoWE0eS) · [PDF](https://openreview.net/pdf/c036ebd40ea82ab94b9badc0028faf7e94456ca1.pdf)
