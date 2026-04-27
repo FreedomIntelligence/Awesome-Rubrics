@@ -1,4 +1,4 @@
-# Awesome-Rubric [![Survey Paper](https://img.shields.io/badge/??%20Survey%20Paper-Coming%20soon-blue)](#) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+# Awesome-Rubric [![Survey Paper](https://img.shields.io/badge/%F0%9F%93%84%20Survey%20Paper-Coming%20soon-blue)](#) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 **Overview.** This repository provides a curated reading list for **rubric-based learning, reward data, modeling, and evaluation of large models**. It emphasizes how explicit criteria are used to build data, guide post-training, design reward signals, and evaluate open-ended model behavior.
 
@@ -301,7 +301,7 @@ This section covers rubric use in text generation, dialogue, and reasoning-heavy
 - [[ICLR](https://openreview.net/forum?id=ugZKZ8vufv)] The CoT Encyclopedia: Analyzing, Predicting, and Controlling how a Reasoning Model will Think
 
 #### 2025
-- [[arXiv 2025.08](https://arxiv.org/abs/2508.03990)] Are Today's LLMs Ready to Explain Well-Being Concepts?
+- [[arXiv 2025.08](https://arxiv.org/abs/2508.03990)] Are Today��s LLMs Ready to Explain Well-Being Concepts?
 - [[arXiv 2025.09](https://arxiv.org/abs/2509.22638)] Language Models Can Learn from Verbal Feedback Without Scalar Rewards [[Code](https://github.com/sail-sg/feedback-conditional-policy)]
 - [[arXiv 2025.10](https://arxiv.org/abs/2510.22143)] Benchmarking and Learning Real-World Customer Service Dialogue
 - [[arXiv 2025.12](https://arxiv.org/abs/2512.01020)] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics
@@ -336,7 +336,7 @@ Medical applications use rubrics to capture expert standards, safety expectation
 - [[arXiv 2026.02](https://arxiv.org/abs/2602.09653)] ClinAlign: Scaling Healthcare Alignment from Clinician Preference [[Code](https://github.com/AQ-MedAI/ClinAlign)]
 - [[arXiv 2026.03](https://arxiv.org/abs/2603.13691)] QuarkMedBench: A Real-World Scenario Driven Benchmark for Evaluating Large Language Models [[Code](https://github.com/Quark-Medical/QuarkMedBench_Technical_Report)]
 - [[arXiv 2026.03](https://arxiv.org/abs/2603.23519)] MedMT-Bench: Can LLMs Memorize and Understand Long Multi-Turn Conversations in Medical Scenarios?
-- [[arXiv 2026.04](https://arxiv.org/abs/2604.00024)] WHBench: A Women's Health Benchmark for Evaluating Frontier LLMs with Expert-in-the-Loop Validation
+- [[arXiv 2026.04](https://arxiv.org/abs/2604.00024)] WHBench: A Women��s Health Benchmark for Evaluating Frontier LLMs with Expert-in-the-Loop Validation
 - [[arXiv 2026.01](https://arxiv.org/abs/2601.13235)] RubRIX: Rubric-Driven Risk Mitigation in Caregiver-AI Interactions
 - [[arXiv 2026.01](https://arxiv.org/abs/2601.18706)] Health-SCORE: Towards Scalable Rubrics for Improving Health-LLMs
 - [[arXiv 2026.02](https://arxiv.org/abs/2602.10367)] LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation
