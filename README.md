@@ -1,4 +1,4 @@
-# Awesome-Rubric [![Survey Paper](https://img.shields.io/badge/📄%20Survey%20Paper-Coming%20soon-blue)](#) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+# Awesome-Rubric [![Survey Paper](https://img.shields.io/badge/??%20Survey%20Paper-Coming%20soon-blue)](#) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 **Overview.** This repository provides a curated reading list for **rubric-based learning, reward data, modeling, and evaluation of large models**. It emphasizes how explicit criteria are used to build data, guide post-training, design reward signals, and evaluate open-ended model behavior.
 
@@ -48,7 +48,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ### Basics/Definitions
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -86,7 +86,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -116,7 +116,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ### Basics/Format
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -144,7 +144,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -173,7 +173,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ### Basics/Why Introduce Large Models
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -203,7 +203,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 
 #### 2026
 
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -236,7 +236,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -263,7 +263,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 
 #### 2026
 
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -299,7 +299,7 @@ This part introduces what rubrics are, how they are represented, and why structu
     </tr>
     <tr>
       <td><a href="https://openreview.net/forum?id=QOWYX3Q2XS">ICLR</a></td>
-      <td>MENLO: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages</td>
+      <td>MENLO: From Preferences to Proficiency �C Evaluating and Modeling Native-like Quality Across 47 Languages</td>
       <td><a href="https://huggingface.co/datasets/facebook/menlo">Code</a></td>
     </tr>
   </tbody>
@@ -307,7 +307,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 
 #### 2025
 
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -345,7 +345,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ##### Post-training-SFT
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -368,7 +368,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -384,7 +384,7 @@ This part introduces what rubrics are, how they are represented, and why structu
   <tbody>
     <tr>
       <td><a href="https://arxiv.org/abs/2508.03990">arXiv 2025.08</a></td>
-      <td>Are Today’s LLMs Ready to Explain Well-Being Concepts?</td>
+      <td>Are Today��s LLMs Ready to Explain Well-Being Concepts?</td>
       <td>-</td>
     </tr>
   </tbody>
@@ -393,7 +393,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ##### Post-training-OPD&DPO
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -416,7 +416,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -437,7 +437,7 @@ This part introduces what rubrics are, how they are represented, and why structu
     </tr>
     <tr>
       <td><a href="https://arxiv.org/abs/2508.03990">arXiv 2025.08</a></td>
-      <td>Are Today’s LLMs Ready to Explain Well-Being Concepts?</td>
+      <td>Are Today��s LLMs Ready to Explain Well-Being Concepts?</td>
       <td>-</td>
     </tr>
     <tr>
@@ -456,7 +456,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ##### Post-training-RL Algorithm Optimization
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -549,7 +549,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -634,7 +634,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ##### Post-training-Reward Signal Optimization
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -742,7 +742,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -792,7 +792,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ##### Post-training-Curriculum Learning
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -822,7 +822,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 ##### Post-training-Self-evolution
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -849,7 +849,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 #### Evaluation Methods
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -930,7 +930,7 @@ This part introduces what rubrics are, how they are represented, and why structu
     </tr>
     <tr>
       <td><a href="https://openreview.net/forum?id=PTXi3Ef4sT">ICLR</a></td>
-      <td>Don’t Pass@$k$: A Bayesian Framework for Large Language Model Evaluation</td>
+      <td>Don��t Pass@$k$: A Bayesian Framework for Large Language Model Evaluation</td>
       <td>-</td>
     </tr>
     <tr>
@@ -945,14 +945,14 @@ This part introduces what rubrics are, how they are represented, and why structu
     </tr>
     <tr>
       <td><a href="https://openreview.net/forum?id=QOWYX3Q2XS">ICLR</a></td>
-      <td>MENLO: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages</td>
+      <td>MENLO: From Preferences to Proficiency �C Evaluating and Modeling Native-like Quality Across 47 Languages</td>
       <td>-</td>
     </tr>
   </tbody>
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -987,7 +987,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 #### Evaluation Benchmarks
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1080,7 +1080,7 @@ This part introduces what rubrics are, how they are represented, and why structu
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1141,7 +1141,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 #### Modality-Text
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1174,7 +1174,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1190,7 +1190,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
   <tbody>
     <tr>
       <td><a href="https://arxiv.org/abs/2508.03990">arXiv 2025.08</a></td>
-      <td>Are Today’s LLMs Ready to Explain Well-Being Concepts?</td>
+      <td>Are Today��s LLMs Ready to Explain Well-Being Concepts?</td>
       <td>-</td>
     </tr>
     <tr>
@@ -1214,7 +1214,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 #### Modality-Visual
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1257,7 +1257,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1298,7 +1298,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 #### Domain-Medical
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1329,7 +1329,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
     </tr>
     <tr>
       <td><a href="https://arxiv.org/abs/2604.00024">arXiv 2026.04</a></td>
-      <td>WHBench: A Women’s Health Benchmark for Evaluating Frontier LLMs with Expert-in-the-Loop Validation</td>
+      <td>WHBench: A Women��s Health Benchmark for Evaluating Frontier LLMs with Expert-in-the-Loop Validation</td>
       <td>-</td>
     </tr>
     <tr>
@@ -1356,7 +1356,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1391,7 +1391,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 #### Domain-Code
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1416,7 +1416,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 #### Domain-Agent
 
 #### 2026
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1489,7 +1489,7 @@ Applications grouped by modality and domain, highlighting where rubrics help cap
 </table>
 
 #### 2025
-<table>
+<table width="100%">
   <colgroup>
     <col width="18%">
     <col width="64%">
@@ -1536,4 +1536,5 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## Contact
 If you have any questions or suggestions, please feel free to contact [Hongru Xiao](mailto:hongru_xiao@tongji.edu.cn).`.
+
 
