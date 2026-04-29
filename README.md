@@ -487,7 +487,7 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="16%" style="width: 16%; vertical-align: top; overflow-wrap: anywhere; word-break: break-word;">-</td>
       <td width="14%" style="width: 14%; vertical-align: top; overflow-wrap: anywhere; word-break: break-word;">ICML-W</td>
       <td width="52%" style="width: 52%; vertical-align: top; overflow-wrap: anywhere; word-break: break-word;"><a href="https://openreview.net/forum?id=seA8en4ujl">Configurable Preference Tuning with Rubric-Guided Synthetic Data</a></td>
-      <td width="18%" style="width: 18%; vertical-align: top; overflow-wrap: anywhere; word-break: break-word;">-</td>
+      <td width="18%" style="width: 18%; vertical-align: top; overflow-wrap: anywhere; word-break: break-word;"><a href="https://github.com/vicgalle/configurable-preference-tuning">Code</a></td>
     </tr>
   </tbody>
 </table>
