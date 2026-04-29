@@ -283,13 +283,13 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://huggingface.co/datasets/OpenRubrics/OpenRubrics">Data</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=vFcm5sOitq">OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation</a></td>
       <td width="18%"><a href="https://github.com/FanZT6/OptimSyn">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=c1bTcrDmt4">Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains</a></td>
       <td width="18%"><a href="https://huggingface.co/collections/ScaleAI/rar">Data</a></td>
@@ -377,7 +377,7 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://github.com/openai/simple-evals">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=QOWYX3Q2XS">MENLO: From Preferences to Proficiency - Evaluating and Modeling Native-like Quality Across 47 Languages</a></td>
       <td width="18%"><a href="https://huggingface.co/datasets/facebook/menlo">Code</a></td>
@@ -416,7 +416,7 @@ Papers with publicly released code or project resources appear in the `Source` c
   </thead>
   <tbody>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=hXNApWLBZG">P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling</a></td>
       <td width="18%">-</td>
@@ -810,7 +810,7 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://huggingface.co/OpenRubrics/datasets">Data</a> / <a href="https://huggingface.co/OpenRubrics/models">Model</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=dBmjnRR1bC">RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks</a></td>
       <td width="18%"><a href="https://mianwu01.github.io/RLAC_website/">Proj</a></td>
@@ -892,7 +892,7 @@ Papers with publicly released code or project resources appear in the `Source` c
   </thead>
   <tbody>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=hXNApWLBZG">P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling</a></td>
       <td width="18%"><a href="https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/Character-GenRM">Code</a></td>
@@ -1010,25 +1010,25 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://github.com/LabRAI/Rulers.git">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=ST0wOB1bdX">mR3: Multilingual Rubric-Agnostic Reward Reasoning Models</a></td>
       <td width="18%"><a href="https://github.com/rubricreward/mr3">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=1ZqJ6jj75q">RM-R1: Reward Modeling as Reasoning</a></td>
       <td width="18%"><a href="https://rm-r1-uiuc.github.io/rmr1-site/">Proj</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=QOWYX3Q2XS">MENLO: From Preferences to Proficiency - Evaluating and Modeling Native-like Quality Across 47 Languages</a></td>
       <td width="18%"><a href="https://huggingface.co/datasets/facebook/menlo">Data</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=0WGl8PNMSA">Retro: Optimizing LLMs for Reasoning-Intensive Document Retrieval</a></td>
       <td width="18%"><a href="https://github.com/VectorSpaceLab/agentic-search/tree/main/Retro-star">Code</a></td>
@@ -1090,7 +1090,7 @@ Papers with publicly released code or project resources appear in the `Source` c
   </thead>
   <tbody>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=PTXi3Ef4sT">Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation</a></td>
       <td width="18%"><a href="https://github.com/mohsenhariri/scorio">Code</a></td>
@@ -1238,13 +1238,13 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://morebench.github.io/">Proj</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://arxiv.org/abs/2510.18941">ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge</a></td>
       <td width="18%"><a href="https://github.com/NVlabs/ProfBench">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=nJvgBolRcR">ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists</a></td>
       <td width="18%"><a href="https://huggingface.co/spaces/launch/ExpertLongBench">Proj</a></td>
@@ -1344,13 +1344,13 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%">-</td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=DrhWTuhtYq">QuRL: Rubrics As Judge For Open-Ended Question Answering</a></td>
       <td width="18%">-</td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=ugZKZ8vufv">The CoT Encyclopedia: Analyzing, Predicting, and Controlling how a Reasoning Model will Think</a></td>
       <td width="18%"><a href="https://github.com/LGAI-Research/CoT-Encyclopedia">Code</a></td>
@@ -1438,7 +1438,7 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://labs.scale.com/leaderboard/vtb">Proj</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=7pQv7qitFV">MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation</a></td>
       <td width="18%"><a href="https://github.com/FreedomIntelligence/MicroVerse">Code</a></td>
