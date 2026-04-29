@@ -176,7 +176,7 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://github.com/agentscope-ai/OpenJudge">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=c1bTcrDmt4">Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains</a></td>
       <td width="18%">-</td>
@@ -209,7 +209,7 @@ Papers with publicly released code or project resources appear in the `Source` c
   </thead>
   <tbody>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=pBjy4ek2QV">Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training</a></td>
       <td width="18%"><a href="https://github.com/Jun-Kai-Zhang/rubrics">Code</a></td>
