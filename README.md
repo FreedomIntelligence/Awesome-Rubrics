@@ -10,12 +10,12 @@ Papers with publicly released code or project resources appear in the `Source` c
 
 ## Table of Contents
 
-- [Basics](#basics)
+- [📚 Basics](#basics)
   - [Definitions](#definitions)
   - [Format](#format)
   - [Traditional Domain Usage](#traditional-domain-usage)
   - [Why Introduce Large Models](#why-introduce-large-models)
-- [Rubrics in the Era of Large Models](#rubrics-in-the-era-of-large-models)
+- [🚀 Rubrics in the Era of Large Models](#rubrics-in-the-era-of-large-models)
   - [Data](#data)
     - [Synthetic Data](#synthetic-data)
     - [Real Data](#real-data)
@@ -23,7 +23,7 @@ Papers with publicly released code or project resources appear in the `Source` c
     - [Pre-training](#pre-training)
     - [Post-training](#post-training)
       - [Post-training-SFT](#post-training-sft)
-      - [Post-training-OPD&DPO](#post-training-opddpo)
+      - [Post-training-OPD and DPO](#post-training-opddpo)
       - [Post-training-RL Algorithm Optimization](#post-training-rl-algorithm-optimization)
       - [Post-training-Reward Signal Optimization](#post-training-reward-signal-optimization)
       - [Post-training-Curriculum Learning](#post-training-curriculum-learning)
@@ -33,7 +33,7 @@ Papers with publicly released code or project resources appear in the `Source` c
       - [Model-based](#model-based)
       - [Statistical-based](#statistical-based)
     - [Evaluation Benchmarks](#evaluation-benchmarks)
-- [Practical Application of Rubrics](#practical-application-of-rubrics)
+- [📊 Practical Application of Rubrics](#practical-application-of-rubrics)
   - [By Modality](#by-modality)
     - [Modality-Text](#modality-text)
     - [Modality-Visual](#modality-visual)
