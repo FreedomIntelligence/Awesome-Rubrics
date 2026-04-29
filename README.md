@@ -2,7 +2,7 @@
 
 **Overview.** This repository provides a curated reading list for **rubric-based learning, reward data, modeling, and evaluation of large models**. It emphasizes how explicit criteria are used to build data, guide post-training, design reward signals, and evaluate open-ended model behavior.
 
-Papers with publicly released code or project resources appear in the `Source` column. Entries without verified repositories use `-` in that column. Dates are extracted for `arXiv YYYY.MM` entries and other venues currently use `-`. All paper tables use the same `16/14/52/18` column layout for steadier GitHub rendering.
+Papers with publicly released code or project resources appear in the `Source` column. Entries without verified repositories use `-` in that column. 
 
 > Contributions are welcome. If you find missing papers, inaccurate classifications, or newly released code, feel free to update this list.
 
@@ -100,19 +100,19 @@ Papers with publicly released code or project resources appear in the `Source` c
       <td width="18%"><a href="https://github.com/agentscope-ai/OpenJudge">Code</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=c1bTcrDmt4">Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains</a></td>
       <td width="18%"><a href="https://huggingface.co/collections/ScaleAI/rar">Data</a></td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=DrhWTuhtYq">QuRL: Rubrics As Judge For Open-Ended Question Answering</a></td>
       <td width="18%">-</td>
     </tr>
     <tr>
-      <td width="16%">-</td>
+      <td width="16%">2025.09</td>
       <td width="14%">ICLR 26</td>
       <td width="52%"><a href="https://openreview.net/forum?id=oP99JQiDYp">Robust Reward Modeling via Causal Rubrics</a></td>
       <td width="18%">-</td>
