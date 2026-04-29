@@ -2,7 +2,7 @@
 
 **Overview.** This repository provides a curated reading list for **rubric-based learning, reward data, modeling, and evaluation of large models**. It emphasizes how explicit criteria are used to build data, guide post-training, design reward signals, and evaluate open-ended model behavior.
 
-Papers with publicly released code or project resources appear in the `Source` column. Entries without verified repositories use `-` in that column. Dates are extracted for `arXiv YYYY.MM` entries and other venues currently use `-`. All paper tables use the same `16/14/52/18` column layout for steadier GitHub rendering.
+Papers with publicly released code or project resources appear in the `Source` column. Entries without verified repositories use `-` in that column. 
 
 > Contributions are welcome. If you find missing papers, inaccurate classifications, or newly released code, feel free to update this list.
 
