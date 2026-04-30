@@ -186,7 +186,7 @@ Papers with publicly released code or project resources appear in the `Source` c
 
 ### Traditional Domain Usage
 
-- No retained papers after full-text justification review.
+- No suitable papers were found after the full-text justification review.
 
 ### Why Introduce Large Models
 
@@ -389,7 +389,7 @@ Papers with publicly released code or project resources appear in the `Source` c
 
 #### Pre-training
 
-- No retained papers after full-text justification review.
+- No suitable papers were found after the full-text justification review.
 
 #### Post-training
 
@@ -1448,7 +1448,7 @@ Papers with publicly released code or project resources appear in the `Source` c
 
 #### Modality-Sound
 
-- No retained papers after full-text justification review.
+- No suitable papers were found after the full-text justification review.
 
 ### By Domain
 
