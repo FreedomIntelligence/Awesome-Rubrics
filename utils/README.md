@@ -100,13 +100,13 @@ a rubric does not directly ask "which answer is better?" It decomposes the judgm
 
 This makes the reward more interpretable, decomposable, and actionable.
 
-## Rubric Generation Strategies
+## Main Rubric Generation Strategies
 
 <p align="center">
   <img src="gen.png" alt="Rubric generation strategies" width="1080">
 </p>
 
-<p align="center"><i>Figure 3. Rubric construction paradigms for large model alignment.</i></p>
+<p align="center"><i>Figure 3. Main Rubric construction paradigms for large model alignment.</i></p>
 
 | Strategy | Core idea | When it is useful |
 |---|---|---|
