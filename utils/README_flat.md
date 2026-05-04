@@ -31,7 +31,7 @@ Papers with publicly released code or project resources include an inline `[[Cod
 A **rubric** is a structured scoring guide. Instead of asking a judge for one vague preference, it decomposes quality into explicit dimensions, scoring rules, and evidence requirements.
 
 <p align="center">
-  <img src="Rubrics.png" alt="Rubrics: from coarse to fine-grained reward signals" width="820">
+  <img src="Rubrics.jpg" alt="Rubrics: from coarse to fine-grained reward signals" width="820">
 </p>
 
 <p align="center"><i>Figure 1. Rubrics convert coarse feedback into fine-grained, inspectable reward signals.</i></p>
@@ -63,7 +63,7 @@ As large models become more capable, progress is increasingly bottlenecked by **
 ## Growing Research Momentum
 
 <p align="center">
-  <img src="tending.png" alt="Growing number of rubric-related papers" width="820">
+  <img src="Tending.png" alt="Growing number of rubric-related papers" width="820">
 </p>
 
 <p align="center"><i>Figure 2. The number of rubric-related papers has grown rapidly, suggesting increasing research attention to structured evaluation and reward design.</i></p>
