@@ -48,7 +48,7 @@ Rubrics are the middle layer: more structured than model-only preference, more f
 
 > "In this new era, evaluation becomes more important than training."
 >
-> - Shunyu Yao, *The Second Half* (2025)
+> - Shunyu Yao, [*The Second Half* (2025)](https://ysymyth.github.io/The-Second-Half/)
 
 As large models become more capable, progress is increasingly bottlenecked by **evaluation and feedback design**. Training can optimize only what the system can measure, and many important tasks cannot be reduced to a single scalar reward.
 
@@ -76,7 +76,7 @@ The rising trend shows that rubric-based methods are becoming an increasingly im
 Evaluation is no longer only a post-hoc metric. It is becoming part of the **infrastructure of AI systems**:
 
 ```text
-expert standards -> rubrics -> evaluation signals -> rewards -> training dynamics
+🧑‍⚖️ Expert Standards → 📋 Rubrics → 📊 Evaluation Signals → 🎯 Rewards → 🔁 Training Dynamics
 ```
 
 Rubrics are therefore not just for judging model outputs. They are a way to **automate parts of expert feedback**: experts define criteria, models apply them at scale, and failures reveal where the rubric or judge must be revised. In this sense, evaluation becomes an executable form of domain knowledge.
@@ -97,14 +97,13 @@ a rubric does not directly ask "which answer is better?" It decomposes the judgm
 | **Clarity** | Is the answer easy to understand and well organized? |
 | **Completeness** | Does it cover affordability, convenience, infrastructure, reliability, and incentives? |
 | **Safety / fairness** | Does it avoid harmful, biased, or exclusionary suggestions? |
-| **Score + rationale** | Can each dimension be scored with observable evidence? |
 
 This makes the reward more interpretable, decomposable, and actionable.
 
 ## Rubric Generation Strategies
 
 <p align="center">
-  <img src="gen.png" alt="Rubric generation strategies" width="820">
+  <img src="gen.png" alt="Rubric generation strategies" width="1080">
 </p>
 
 <p align="center"><i>Figure 3. Rubric construction paradigms for large model alignment.</i></p>
