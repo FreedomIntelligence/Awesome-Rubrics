@@ -1,0 +1,534 @@
+<h1 align="center">Awesome Rubric</h1>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Survey%20Paper-Coming%20soon-blue" alt="Survey Paper"></a>
+  <a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a>
+  <a href="https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintenance"></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs Welcome"></a>
+</p>
+
+<p align="center">
+  A curated reading list on <b>rubric-based learning, reward modeling, and evaluation for large models</b>.
+  <br>
+  Rubrics turn expert judgment into structured criteria, reusable feedback, and trainable reward signals.
+</p>
+
+---
+
+<p align="center">
+  <a href="#rubrics-at-a-glance">Rubrics at a Glance</a> ·
+  <a href="#why-rubrics">Why Rubrics?</a> ·
+  <a href="#repository-map">Repository Map</a> ·
+  <a href="#table-of-contents">Table of Contents</a>
+</p>
+
+Papers with publicly released code or project resources include an inline `[[Code](...)]` link. Entries without verified repositories omit that link. Each paper ends with a gray section tag, so readers can quickly see why it is placed there.
+
+> Contributions are welcome. If you find missing papers, inaccurate classifications, or newly released code, feel free to update this list.
+
+## Rubrics at a Glance
+
+A **rubric** is a structured scoring guide. Instead of asking a judge for one vague preference, it decomposes quality into explicit dimensions, scoring rules, and evidence requirements.
+
+<p align="center">
+  <img src="Rubrics.jpg" alt="Rubrics: from coarse to fine-grained reward signals" width="820">
+</p>
+
+<p align="center"><i>Figure 1. Rubrics convert coarse feedback into fine-grained, inspectable reward signals.</i></p>
+
+| Feedback style | Typical signal | Best fit | Main limitation |
+|---|---|---|---|
+| **RLHF / model-based preference** | "Output A is better than output B." | Open-ended comparison | Coarse and hard to inspect |
+| **RLVR / rule-based reward** | Format is correct, answer matches, reasoning token appears, list structure exists | Verifiable tasks | Too rigid for subjective or open-ended tasks |
+| **Rubric-based feedback** | Relevance, completeness, clarity, safety, each scored separately | Open-ended evaluation and training | Requires careful design and calibration |
+
+Rubrics are the middle layer: more structured than model-only preference, more flexible than hard rules.
+
+## Why Rubrics?
+
+> "In this new era, evaluation becomes more important than training."
+>
+> - Shunyu Yao, *The Second Half* (2025)
+
+As large models become more capable, progress is increasingly bottlenecked by **evaluation and feedback design**. Training can optimize only what the system can measure, and many important tasks cannot be reduced to a single scalar reward.
+
+| Rubrics help answer | Why it matters |
+|---|---|
+| What counts as good behavior? | They define explicit criteria and scoring boundaries. |
+| How can expert judgment scale? | They convert tacit standards into reusable evaluation instructions. |
+| How does evaluation become training signal? | Dimension-level scores can become rewards for SFT, DPO, RL, and curriculum learning. |
+| How can LLM judges be made less opaque? | Judges must expose criteria, evidence, scores, and rationales. |
+
+
+## Growing Research Momentum
+
+<p align="center">
+  <img src="Tending.png" alt="Growing number of rubric-related papers" width="1080">
+</p>
+
+<p align="center"><i>Figure 2. The number of rubric-related papers has grown rapidly, suggesting increasing research attention to structured evaluation and reward design.</i></p>
+
+The rising trend shows that rubric-based methods are becoming an increasingly important direction for large-model alignment, especially as evaluation, reward modeling, and post-training move toward more structured and auditable feedback.
+
+
+## From Evaluation to Reward
+
+Evaluation is no longer only a post-hoc metric. It is becoming part of the **infrastructure of AI systems**:
+
+```text
+expert standards -> rubrics -> evaluation signals -> rewards -> training dynamics
+```
+
+Rubrics are therefore not just for judging model outputs. They are a way to **automate parts of expert feedback**: experts define criteria, models apply them at scale, and failures reveal where the rubric or judge must be revised. In this sense, evaluation becomes an executable form of domain knowledge.
+
+## A Minimal Rubric Example
+
+For the query:
+
+```text
+How can cities encourage more people to use public transport?
+```
+
+a rubric does not directly ask "which answer is better?" It decomposes the judgment:
+
+| Component | What the judge checks |
+|---|---|
+| **Relevance** | Does the answer address public transport adoption rather than unrelated urban issues? |
+| **Clarity** | Is the answer easy to understand and well organized? |
+| **Completeness** | Does it cover affordability, convenience, infrastructure, reliability, and incentives? |
+| **Safety / fairness** | Does it avoid harmful, biased, or exclusionary suggestions? |
+| **Score + rationale** | Can each dimension be scored with observable evidence? |
+
+This makes the reward more interpretable, decomposable, and actionable.
+
+## Rubric Generation Strategies
+
+<p align="center">
+  <img src="gen.png" alt="Rubric generation strategies" width="820">
+</p>
+
+<p align="center"><i>Figure 3. Rubric construction paradigms for large model alignment.</i></p>
+
+| Strategy | Core idea | When it is useful |
+|---|---|---|
+| **Expert direct annotation** | Experts write criteria explicitly. | High-stakes domains and seed rubrics |
+| **Induction from expert QA annotations** | Criteria are extracted from annotated examples. | Scaling expert knowledge beyond manual templates |
+| **Distillation from teacher demonstrations** | Rubrics are derived from high-quality model outputs. | Bootstrapping scalable reward signals |
+
+Together, these strategies show how rubric construction moves from manual specification toward data-driven induction and model-driven distillation.
+
+
+## Repository Map
+
+This repository is organized as a **conceptual map** of rubric-related research. We group papers by the role rubrics play in the large-model pipeline.
+
+This organization helps show rubrics not only as evaluation tools, but also as structured interfaces connecting **expert standards**, **feedback data**, **reward signals**, **training objectives**, and **deployment-time assessment**.
+
+| Section | Role in the repository |
+|---|---|
+| **Basics** | Introduces what counts as a rubric, how rubric formats differ from preferences, rules, or scalar scores, and why structured criteria become useful in large-model settings. |
+| **Data** | Covers how rubrics are collected, generated, refined, and organized into reusable supervision signals through human annotation, synthetic generation, expert labeling, and rubric datasets. |
+| **Training** | Summarizes how rubric-level judgments can be transformed into SFT data, preference objectives, RL rewards, curriculum signals, and self-improvement loops. |
+| **Evaluation** | Connects rubrics to LLM-as-a-judge protocols, benchmark design, calibration, reliability analysis, and robustness checks, where explicit and auditable criteria are especially important. |
+| **Applications** | Shows how rubric-based methods extend beyond text QA to multimodal tasks, agent systems, and professional domains that require domain-specific standards. |
+
+Overall, this structure follows the lifecycle of rubric-based large-model alignment:
+
+**Define criteria → collect or generate rubric data strgeties → train with rubric signals → evaluate with structured judges → apply in domain-specific tasks**
+
+> Rubrics provide a structured layer for connecting data, training, evaluation, and applications.
+
+---
+
+## Table of Contents
+
+<details open>
+<summary>Browse the reading list</summary>
+
+- [Basics](#basics)
+  - [Definitions](#definitions)
+  - [Format](#format)
+  - [Traditional Domain Usage](#traditional-domain-usage)
+  - [Why Introduce Large Models](#why-introduce-large-models)
+- [Rubrics in the Era of Large Models](#rubrics-in-the-era-of-large-models)
+  - [Data](#data)
+    - [Synthetic Data](#synthetic-data)
+    - [Real Data](#real-data)
+  - [Training](#training)
+    - [Pre-training](#pre-training)
+    - [Post-training](#post-training)
+      - [Post-training-SFT](#post-training-sft)
+      - [Post-training-OPD&DPO](#post-training-opddpo)
+      - [Post-training-RL Algorithm Optimization](#post-training-rl-algorithm-optimization)
+      - [Post-training-Reward Signal Optimization](#post-training-reward-signal-optimization)
+      - [Post-training-Curriculum Learning](#post-training-curriculum-learning)
+      - [Post-training-Self-evolution](#post-training-self-evolution)
+  - [Evaluation](#evaluation)
+    - [Evaluation Methods](#evaluation-methods)
+      - [Model-based](#model-based)
+      - [Statistical-based](#statistical-based)
+    - [Evaluation Benchmarks](#evaluation-benchmarks)
+- [Practical Application of Rubrics](#practical-application-of-rubrics)
+  - [By Modality](#by-modality)
+    - [Modality-Text](#modality-text)
+    - [Modality-Visual](#modality-visual)
+    - [Modality-Sound](#modality-sound)
+  - [By Domain](#by-domain)
+    - [Domain-Medical](#domain-medical)
+    - [Domain-Code](#domain-code)
+    - [Domain-Agent](#domain-agent)
+
+</details>
+
+---
+
+## Basics
+
+### Definitions
+> Rubrics define structured evaluation dimensions, scoring rules, and judgment boundaries for open-ended model outputs. This section covers work that clarifies what counts as a rubric and how rubrics function as judges or reward criteria.
+
+#### 2026
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.05125)] Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks `Definitions`
+
+#### 2025
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] `Definitions`
+- [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains [[Data](https://huggingface.co/collections/ScaleAI/rar)] `Definitions`
+- [[ICLR 26](https://openreview.net/forum?id=DrhWTuhtYq)] QuRL: Rubrics As Judge For Open-Ended Question Answering `Definitions`
+- [[ICLR 26](https://openreview.net/forum?id=oP99JQiDYp)] Robust Reward Modeling via Causal Rubrics `Definitions`
+
+#### 2024
+- [[Blog 2024.11](https://lilianweng.github.io/posts/2024-11-28-reward-hacking/)] Reward Hacking in Reinforcement Learning `Definitions`
+
+
+
+### Format
+
+> This section focuses on how rubrics are expressed, including dimensions, levels, weights, and scoring templates. It is useful for understanding the representational form that makes rubric-based supervision reusable and controllable.
+
+
+#### 2026
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.07019)] AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge `Format`
+
+#### 2025
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] `Format`
+- [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains `Format`
+
+### Traditional Domain Usage
+
+- No retained papers after full-text justification review.
+
+### Why Introduce Large Models
+
+#### 2025
+- [[ICLR 26](https://openreview.net/forum?id=pBjy4ek2QV)] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training [[Code](https://github.com/Jun-Kai-Zhang/rubrics)] `Why Introduce Large Models`
+
+## Rubrics in the Era of Large Models
+
+### Data
+
+#### Synthetic Data
+
+> Synthetic data uses generated tasks, labels, critiques, or rubric annotations to expand supervision beyond limited human labeling. In Rubric RL, it is especially useful when rubric-style feedback can be programmatically produced at scale.
+
+#### 2026
+
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.09653)] ClinAlign: Scaling Healthcare Alignment from Clinician Preference [[Code](https://github.com/AQ-MedAI/ClinAlign)] `Synthetic Data`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.08430)] RubricHub: A Comprehensive and Highly Discriminative Rubric Dataset via Automated Coarse-to-Fine Generation [[Code](https://github.com/teqkilla/RubricHub)] `Synthetic Data`
+
+#### 2025
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.07743)] OpenRubrics: Towards Scalable Synthetic Rubric Generation for Reward Modeling and LLM Alignment [[Data](https://huggingface.co/datasets/OpenRubrics/OpenRubrics)] `Synthetic Data`
+- [[ICLR 26](https://openreview.net/forum?id=vFcm5sOitq)] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation [[Code](https://github.com/FanZT6/OptimSyn)] `Synthetic Data`
+- [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains [[Data](https://huggingface.co/collections/ScaleAI/rar)] `Synthetic Data`
+
+#### Real Data
+
+> Real data refers to rubric signals grounded in human preferences, authentic interactions, or expert annotations. These sources are important when alignment targets depend on nuanced human standards that are hard to synthesize fully.
+
+#### 2026
+
+- [[arXiv 2026.04](https://arxiv.org/abs/2604.02368)] Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation [[Code](https://github.com/randomtutu/Xpertbench)] `Real Data`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.07244)] PresentBench: A Fine-Grained Rubric-Based Benchmark for Slide Generation [[Code](https://github.com/PresentBench/PresentBench)] `Real Data`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.27646)] PRBench: End-to-end Paper Reproduction in Physics Research [[Code](https://github.com/HET-AGI/PRBench-Eval-Handson)] `Real Data`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.18706)] Health-SCORE: Towards Scalable Rubrics for Improving Health-LLMs `Real Data`
+
+
+#### 2025
+
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.22143)] Benchmarking and Learning Real-World Customer Service Dialogue `Real Data`
+- [[ICLR 26](https://openreview.net/forum?id=QOWYX3Q2XS)] MENLO: From Preferences to Proficiency - C Evaluating and Modeling Native-like Quality Across 47 Languages [[Code](https://huggingface.co/datasets/facebook/menlo)] `Real Data`
+- [[arXiv 2025.05](https://arxiv.org/abs/2505.08775)] HealthBench: Evaluating Large Language Models Towards Improved Human Health [[Code](https://github.com/openai/simple-evals)] `Real Data`
+- [[arXiv 2025.04](https://arxiv.org/abs/2504.01848)] PaperBench: Evaluating AI's Ability to Replicate AI Research [[Code](https://github.com/openai/preparedness/tree/main/project/paperbench)] `Real Data`
+
+
+### Training
+
+#### Pre-training
+
+- No retained papers after full-text justification review.
+
+#### Post-training
+
+##### Post-training-SFT
+
+> Rubrics can be used in supervised fine-tuning for filtering data, weighting samples, or imposing structured response preferences. This makes SFT more aligned with multi-dimensional quality targets instead of flat imitation alone.
+
+#### 2025
+- [[ICLR 26](https://openreview.net/forum?id=hXNApWLBZG)] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling `Post-training-SFT`
+
+##### Post-training-OPD&DPO
+
+#### 2026
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.21362)] AdaRubric: Task-Adaptive Rubrics for LLM Agent Evaluation [[Code](https://github.com/alphadl/AdaRubrics)] `Post-training-OPD&amp;DPO`
+
+#### 2025
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.07743)] OpenRubrics: Towards Scalable Synthetic Rubric Generation for Reward Modeling and LLM Alignment [[Model](https://huggingface.co/OpenRubrics/models)] `Post-training-OPD&amp;DPO`
+- [[arXiv 2025.08](https://arxiv.org/abs/2508.03990)] Are Today's LLMs Ready to Explain Well-Being Concepts? `Post-training-OPD&amp;DPO`
+- [[ICML-W](https://openreview.net/forum?id=seA8en4ujl)] Configurable Preference Tuning with Rubric-Guided Synthetic Data `Post-training-OPD&amp;DPO`
+
+##### Post-training-RL Algorithm Optimization
+
+> This section covers preference optimization methods that incorporate fine-grained rubric signals rather than only pairwise global preferences. Rubrics help make preference learning more controllable, interpretable, and task-adaptive.
+
+#### 2026
+- [[arXiv 2026.04](https://arxiv.org/abs/2604.02795)] Rubrics to Tokens: Bridging Response-level Rubrics and Token-level Rewards in Instruction Following Tasks [[Code](https://github.com/TURLEing/Rubrics-To-Tokens)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.15434)] Listening to the Echo: User-Reaction Aware Policy Optimization via Scalar-Verbal Hybrid Reinforcement Learning `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.15646)] Alternating Reinforcement Learning with Contextual Rubric Rewards `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.20046)] Experience is the Best Teacher: Motivating Effective Exploration in Reinforcement Learning for LLMs [[Code](https://github.com/sikelifei/HeRL)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.26535)] PAPO: Stabilizing Rubric Integration Training via Decoupled Advantage Normalization [[Code](https://github.com/tanzelin430/PAPO)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.01511)] Alternating Reinforcement Learning for Rubric-Based Reward Modeling in Non-Verifiable LLM Post-Training [[Model](https://huggingface.co/collections/OpenRubrics/rubricarm)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.07594)] Learning to Self-Verify Makes Language Models Better Reasoners `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.12268)] CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use [[Code](https://github.com/namezhenzhang/CM2-RLCR-Tool-Agent)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.14069)] Open Rubric System: Scaling Reinforcement Learning with Pairwise Adaptive Rubric [[Code](https://github.com/Qwen-Applications/OpenRS)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.06021)] Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards [[Code](https://github.com/THUDM/CaRR)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.05242)] GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization [[Proj](https://nvlabs.github.io/GDPO/)] `Post-training-RL Algorithm Optimization`
+
+#### 2025
+- [[arXiv 2025.08](https://arxiv.org/abs/2508.07768)] Pareto Multi-Objective Alignment for Language Models `Post-training-RL Algorithm Optimization`
+- [[arXiv 2025.06](https://arxiv.org/abs/2506.13351)] Direct Reasoning Optimization: Constrained RL with Token-Level Dense Reward and Rubric-Gated Constraints for Open-ended Tasks `Post-training-RL Algorithm Optimization`
+- [[arXiv 2025.08](https://arxiv.org/abs/2508.16949)] Breaking the Exploration Bottleneck: Rubric-Scaffolded Reinforcement Learning for General LLM Reasoning [[Code](https://github.com/IANNXANG/RuscaRL)] `Post-training-RL Algorithm Optimization`
+- [[arXiv 2025.09](https://arxiv.org/abs/2509.22611)] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning `Post-training-RL Algorithm Optimization`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.11184)] Reinforcement Learning for Tool-Integrated Interleaved Thinking towards Cross-Domain Generalization `Post-training-RL Algorithm Optimization`
+- [[arXiv 2025.11](https://arxiv.org/abs/2511.12344)] Reward and Guidance through Rubrics: Promoting Exploration to Improve Multi-Domain Reasoning `Post-training-RL Algorithm Optimization`
+
+
+##### Post-training-Reward Signal Optimization
+
+> This section centers on designing better rubric-based rewards, critics, and judges after initial model training. It includes work on reward shaping, judge calibration, rubric generation, and converting high-level criteria into usable learning signals.
+
+#### 2026
+- [[arXiv 2026.04](https://arxiv.org/abs/2604.02795)] Rubrics to Tokens: Bridging Response-level Rubrics and Token-level Rewards in Instruction Following Tasks [[Code](https://github.com/TURLEing/Rubrics-To-Tokens)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.08035)] CDRRM: Contrast-Driven Rubric Generation for Reliable and Interpretable Reward Modeling [[Code](https://github.com/ldcan/CDRRM)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.01562)] RubricBench: Aligning Model-Generated Rubrics with Human Standards [[Code](https://github.com/planepig/rubricbench)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.07019)] AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge [[Code](https://github.com/ChicagoHAI/AutoChecklist)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.20882)] RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.01511)] Alternating Reinforcement Learning for Rubric-Based Reward Modeling in Non-Verifiable LLM Post-Training [[Model](https://huggingface.co/collections/OpenRubrics/rubricarm)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.14069)] Open Rubric System: Scaling Reinforcement Learning with Pairwise Adaptive Rubric [[Code](https://github.com/Qwen-Applications/OpenRS)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.00846)] OMNI-RRM: Advancing Omni Reward Model [[Code](https://anonymous.4open.science/r/Omni-RRM-CC08/readme.md)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.01791)] Grad2Reward: From Sparse Judgment to Dense Rewards for Improving Open-Ended LLM Reasoning `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.03619)] Learning Query-Specific Rubrics from Human Preferences for DeepResearch Report Generation `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.05125)] Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.10067)] Features as Rewards: Scalable Supervision for Open-Ended Tasks via Interpretability `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.20751)] SibylSense: Adaptive Rubric Learning via Memory Tuning and Adversarial Probing `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.08430)] RubricHub: A Comprehensive and Highly Discriminative Rubric Dataset via Automated Coarse-to-Fine Generation [[Code](https://github.com/teqkilla/RubricHub)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.11374)] Reward Modeling for Scientific Writing Evaluation [[Code](https://github.com/UKPLab/acl2026-expert-rm)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.02986)] P-Check: Advancing Personalized Reward Models via Learning to Generate Dynamic Checklists [[Code](https://github.com/tommyEzreal/P-Check_)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.07149)] Rewarding Creativity: A Human-Aligned Generative Reward Model for Reinforcement Learning in Storytelling `Post-training-Reward Signal Optimization`
+
+#### 2025
+- [[arXiv 2025.12](https://arxiv.org/abs/2512.20312)] TableGPT-R1: Advancing Tabular Reasoning Through Reinforcement Learning [[Code](https://huggingface.co/tablegpt/TableGPT-R1)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2025.11](https://arxiv.org/abs/2511.10507)] AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following [[Code](https://github.com/facebookresearch/AdvancedIF)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.07743)] OpenRubrics: Towards Scalable Synthetic Rubric Generation for Reward Modeling and LLM Alignment [[Data](https://huggingface.co/OpenRubrics/datasets)] [[Model](https://huggingface.co/OpenRubrics/models)] `Post-training-Reward Signal Optimization`
+- [[ICLR 26](https://openreview.net/forum?id=dBmjnRR1bC)] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks [[Proj](https://mianwu01.github.io/RLAC_website/)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2025.08](https://arxiv.org/abs/2508.12790)] Reinforcement Learning with Rubric Anchors `Post-training-Reward Signal Optimization`
+- [[arXiv 2025.06](https://arxiv.org/abs/2506.15651)] AutoRule: Reasoning Chain-of-Thought Extracted Rule-Based Rewards Improve Preference Learning [[Code](https://github.com/cxcscmu/AutoRule)] `Post-training-Reward Signal Optimization`
+- [[NeurIPS 25](https://openreview.net/forum?id=RPRqKhjrr6)] Checklists Are Better Than Reward Models For Aligning Language Models [[Code](https://github.com/viswavi/RLCF)] `Post-training-Reward Signal Optimization`
+- [[arXiv 2025.05](https://arxiv.org/abs/2505.13388)] R3: Robust Rubric-Agnostic Reward Models [[Code](https://github.com/rubricreward/r3)] `Post-training-Reward Signal Optimization`
+
+
+##### Post-training-Curriculum Learning
+
+> Curriculum learning studies how rubric dimensions or difficulty levels can stage training over time. It is relevant when structured feedback is used not only to score outputs but also to organize learning progression.
+
+#### 2026
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.21628)] RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning `Post-training-Curriculum Learning`
+
+#### 2025
+- [[ICLR 26](https://openreview.net/forum?id=hXNApWLBZG)] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling [[Code](https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/Character-GenRM)] `Post-training-Curriculum Learning`
+
+##### Post-training-Self-evolution
+
+#### 2026
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.10885)] Reinforcing Chain-of-Thought Reasoning with Self-Evolving Rubrics [[Code](https://alphalab-ustc.github.io/rlcer-alphalab/)] `Post-training-Self-evolution`
+
+### Evaluation
+
+#### Evaluation Methods
+
+> Evaluation methods focus on how rubrics are used to judge outputs reliably and consistently across tasks. This includes LLM-as-a-judge settings, rubric-aware reward reasoning, and methods that improve interpretability of evaluation.
+
+#### Model-based
+
+#### 2026
+
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.20882)] RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation [[Data](https://huggingface.co/datasets/kdhole/healthbench-rubric-responses)] `Model-based`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.11027)] Beyond the Illusion of Consensus: From Surface Heuristics to Knowledge-Grounded Evaluation in LLM-as-a-Judge `Model-based`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.08035)] CDRRM: Contrast-Driven Rubric Generation for Reliable and Interpretable Reward Modeling [[Code](https://github.com/ldcan/CDRRM.git)] `Model-based`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.07019)] AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge [[Code](https://github.com/ChicagoHAI/AutoChecklist)] `Model-based`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.12246)] Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training `Model-based`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.21362)] AdaRubric: Task-Adaptive Rubrics for LLM Agent Evaluation [[Code](https://github.com/alphadl/AdaRubrics)] `Model-based`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.05125)] Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks `Model-based`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.13576)] Rubrics as an Attack Surface: Stealthy Preference Drift in LLM Judges [[Code](https://github.com/ZDCSlab/Rubrics-as-an-Attack-Surface)] `Model-based`
+- [[arXiv 26.01](https://arxiv.org/abs/2601.08654)] RULERS: Locked Rubrics and Evidence-Anchored Scoring for Robust LLM Evaluation [[Code](https://github.com/LabRAI/Rulers.git)] `Model-based`
+- [[ICLR 26](https://openreview.net/forum?id=ST0wOB1bdX)] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models [[Code](https://github.com/rubricreward/mr3)] `Model-based`
+- [[ICLR 26](https://openreview.net/forum?id=1ZqJ6jj75q)] RM-R1: Reward Modeling as Reasoning [[Proj](https://rm-r1-uiuc.github.io/rmr1-site/)] `Model-based`
+- [[ICLR 26](https://openreview.net/forum?id=QOWYX3Q2XS)] MENLO: From Preferences to Proficiency - Evaluating and Modeling Native-like Quality Across 47 Languages [[Data](https://huggingface.co/datasets/facebook/menlo)] `Model-based`
+- [[ICLR 26](https://openreview.net/forum?id=0WGl8PNMSA)] Retro: Optimizing LLMs for Reasoning-Intensive Document Retrieval [[Code](https://github.com/VectorSpaceLab/agentic-search/tree/main/Retro-star)] `Model-based`
+
+#### 2025
+
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] `Model-based`
+- [[arXiv 2025.05](https://arxiv.org/abs/2505.13388)] R3: Robust Rubric-Agnostic Reward Models [[Code](https://github.com/rubricreward/r3)] `Model-based`
+
+#### Statistical-based
+
+#### 2025
+
+- [[ICLR 26](https://openreview.net/forum?id=PTXi3Ef4sT)] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation [[Code](https://github.com/mohsenhariri/scorio)] `Statistical-based`
+
+#### Evaluation Benchmarks
+
+> Benchmark work provides datasets and tasks where rubric-based evaluation can be compared, stress-tested, and standardized. These resources are important for measuring whether rubric-trained or rubric-judged systems generalize across realistic scenarios.
+
+#### 2026
+
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.01562)] RubricBench: Aligning Model-Generated Rubrics with Human Standards [[Code](https://github.com/planepig/rubricbench)] `Evaluation Benchmarks`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.10303)] Is this Idea Novel? An Automated Benchmark for Judgment of Research Ideas [[Code](https://github.com/TimSchopf/RINoBench)] `Evaluation Benchmarks`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.22744)] Beyond Binary Correctness: Scaling Evaluation of Long-Horizon Agents on Subjective Enterprise Tasks `Evaluation Benchmarks`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.28407)] MiroEval: Benchmarking Multimodal Deep Research Agents in Process and Outcome  [[Proj](https://miroeval-ai.github.io/website/)] `Evaluation Benchmarks`
+- [[arXiv 2026.03](https://arxiv.org/abs/2604.02368)] Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation [[Proj](https://xpert.bytedance.com/)] `Evaluation Benchmarks`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.07980)] $OneMillion-Bench: How Far are Language Agents from Human Experts? `Evaluation Benchmarks`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.10367)] LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation [[Code](https://github.com/ZhilingYan/LiveMedBench)] `Evaluation Benchmarks`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.11199)] When and What to Ask: AskBench and Rubric-Guided RLVR for LLM Clarification `Evaluation Benchmarks`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.16669)] PLAW BENCH : A Rubric-Based Benchmark for Evaluating LLMs in Real-World Legal Practice  [[Code](https://github.com/SKYLENAGE-AI/PLawBench)] `Evaluation Benchmarks`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.21165)] FRONTIER SCIENCE : E VALUATING AI’ S ABILITY TO PERFORM EXPERT -LEVEL SCIENTIFIC TASKS [[Data](https://huggingface.co/datasets/openai/frontierscience/tree/main)] `Evaluation Benchmarks`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.22155)] UEval: A Benchmark for Unified Multimodal Generation [[Proj](https://zlab-princeton.github.io/UEval/)] `Evaluation Benchmarks`
+
+
+##### 2025
+- [[arXiv 2025.11](https://arxiv.org/abs/2511.07685)] RESEARCH RUBRICS : A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents [[Proj](https://scale.com/research/researchrubrics)] `Evaluation Benchmarks`
+- [[arXiv 2025.11](https://arxiv.org/abs/2512.01020)] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics `Evaluation Benchmarks`
+- [[arXiv 2025.11](https://arxiv.org/abs/2511.10507)] AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following [[Code](https://github.com/facebookresearch/AdvancedIF)] `Evaluation Benchmarks`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.04374)] GDPVAL : EVALUATING AI MODEL PERFORMANCE ON REAL-WORLD ECONOMICALLY VALUABLE TASKS [[Data](https://huggingface.co/datasets/openai/gdpval)] `Evaluation Benchmarks`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.16380)] MOREBENCH : EVALUATING PROCEDURAL AND PLoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes [[Proj](https://morebench.github.io/)] `Evaluation Benchmarks`
+- [[ICLR 26](https://arxiv.org/abs/2510.18941)]ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge [[Code](https://github.com/NVlabs/ProfBench)] `Evaluation Benchmarks`
+- [[ICLR 26](https://openreview.net/forum?id=nJvgBolRcR)] ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists [[Proj](https://huggingface.co/spaces/launch/ExpertLongBench)] `Evaluation Benchmarks`
+- [[arXiv 2025.07](https://arxiv.org/abs/2507.02833)] Generalizing Verifiable Instruction Following [[Code](https://github.com/allenai/IFBench)] `Evaluation Benchmarks`
+- [[arXiv 2025.05](https://arxiv.org/abs/2505.08775)] HealthBench: Evaluating Large Language Models Towards Improved Human Health  [[Code](https://github.com/openai/simple-evals)] `Evaluation Benchmarks`
+- [[arXiv 2025.04](https://arxiv.org/abs/2504.01848)] PaperBench: Evaluating AI's Ability to Replicate AI Research [[Code](https://github.com/openai/preparedness/tree/main/project/paperbench)] `Evaluation Benchmarks`
+
+
+
+## Practical Application of Rubrics
+
+> Applications grouped by modality and domain, highlighting where rubrics help capture quality, safety, and task completion.
+
+### By Modality
+
+#### Modality-Text
+
+> This section covers rubric use in text generation, dialogue, and reasoning-heavy language tasks. The emphasis is on how structured criteria guide evaluation or training for open-ended textual outputs.
+
+#### 2026
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.11199)] When and What to Ask: AskBench and Rubric-Guided RLVR for LLM Clarification [[Code](https://github.com/jialeuuz/askbench)] `Modality-Text`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.07149)] Rewarding Creativity: A Human-Aligned Generative Reward Model for Reinforcement Learning in Storytelling `Modality-Text`
+
+#### 2025
+- [[arXiv 2025.12](https://arxiv.org/abs/2512.01020)] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics `Modality-Text`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.22143)] Benchmarking and Learning Real-World Customer Service Dialogue `Modality-Text`
+- [[arXiv 2025.08](https://arxiv.org/abs/2508.03990)] Are Today's LLMs Ready to Explain Well-Being Concepts? `Modality-Text`
+- [[ICLR 26](https://openreview.net/forum?id=DrhWTuhtYq)] QuRL: Rubrics As Judge For Open-Ended Question Answering `Modality-Text`
+- [[ICLR 26](https://openreview.net/forum?id=ugZKZ8vufv)] The CoT Encyclopedia: Analyzing, Predicting, and Controlling how a Reasoning Model will Think [[Code](https://github.com/LGAI-Research/CoT-Encyclopedia)] `Modality-Text`
+
+
+#### Modality-Visual
+
+> Visual rubric work extends structured judging and reward design to images, videos, and vision-language tasks. It is useful when model quality depends on multiple perceptual and semantic dimensions rather than a single scalar objective.
+
+#### 2026
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.09160)] RubiCap: Rubric-Guided Reinforcement Learning for Dense Image Captioning `Modality-Visual`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.16600)] Rationale Matters: Learning Transferable Rubrics via Proxy-Guided Critique for VLM Reward Models [[Code](https://github.com/Qwen-Applications/Proxy-GRM)] `Modality-Visual`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.05659)] When Rubrics Fail: Error Enumeration as Reward in Reference-Free RL Post-Training for Virtual Try-On `Modality-Visual`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.14569)] SOCIAL CAPTION: Evaluating Social Understanding in Multimodal Models `Modality-Visual`
+
+#### 2025
+- [[arXiv 2025.11](https://arxiv.org/abs/2511.20651)] RubricRL: Simple Generalizable Rewards for Text-to-Image Generation `Modality-Visual`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.12712)] Beyond Seeing: Evaluating Multimodal LLMs on Tool-Enabled Image Perception [[Proj](https://labs.scale.com/leaderboard/vtb)] `Modality-Visual`
+- [[ICLR 26](https://openreview.net/forum?id=7pQv7qitFV)] MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation [[Code](https://github.com/FreedomIntelligence/MicroVerse)] `Modality-Visual`
+
+#### Modality-Sound
+
+- No retained papers after full-text justification review.
+
+### By Domain
+
+#### Domain-Medical
+
+> Medical applications use rubrics to capture expert standards, safety expectations, and multi-step clinical reasoning quality. This is important because medical evaluation often cannot be reduced to single-answer correctness.
+
+#### 2026
+
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.13691)] QuarkMedBench: A Real-World Scenario Driven Benchmark for Evaluating Large Language Models [[Code](https://github.com/Quark-Medical/QuarkMedBench_Technical_Report)] `Domain-Medical`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.23519)] MedMT-Bench: Can LLMs Memorize and Understand Long Multi-Turn Conversations in Medical Scenarios? `Domain-Medical`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.09653)] ClinAlign: Scaling Healthcare Alignment from Clinician Preference [[Code](https://github.com/AQ-MedAI/ClinAlign)] `Domain-Medical`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.10367)] LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation `Domain-Medical`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.11661)] Quark Medical Alignment: A Holistic Multi-Dimensional Alignment and Collaborative Optimization Paradigm `Domain-Medical`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.13235)] RubRIX: Rubric-Driven Risk Mitigation in Caregiver-AI Interactions `Domain-Medical`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.18706)] Health-SCORE: Towards Scalable Rubrics for Improving Health-LLMs `Domain-Medical`
+
+#### 2025
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.15859)] InfiMed-ORBIT: Aligning LLMs on Open-Ended Complex Tasks via Rubric-Based Incremental Training [[Code](https://github.com/pidneuralode/ORBIT)] `Domain-Medical`
+- [[arXiv 2025.09](https://arxiv.org/abs/2509.02208)] Baichuan-M2: Scaling Medical Capability with Large Verifier System `Domain-Medical`
+- [[arXiv 2025.05](https://arxiv.org/abs/2505.08775)] HealthBench: Evaluating Large Language Models Towards Improved Human Health [[Code](https://github.com/openai/simple-evals)] `Domain-Medical`
+
+
+#### Domain-Code
+
+> Code-domain rubric work studies structured evaluation for coding, debugging, and software-agent behavior.
+
+#### 2026
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.04171)] Agentic Rubrics as Contextual Verifiers for SWE Agents `Domain-Code`
+
+#### Domain-Agent
+
+> Agent settings require rubrics to evaluate long-horizon behavior, tool use, planning, and subjective task completion. This section highlights work where structured criteria are central to assessing or training interactive agents.
+
+#### 2026
+- [[Tech Report 2026.04](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf)] DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence [[Model](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)] `Domain-Agent`
+- [[arXiv 2026.04](https://arxiv.org/abs/2604.02368)] Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation [[Code](https://github.com/randomtutu/Xpertbench)] `Domain-Agent`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.07244)] PresentBench: A Fine-Grained Rubric-Based Benchmark for Slide Generation [[Code](https://github.com/PresentBench/PresentBench)] `Domain-Agent`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.21362)] AdaRubric: Task-Adaptive Rubrics for LLM Agent Evaluation [[Code](https://github.com/alphadl/AdaRubrics)] `Domain-Agent`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.22744)] Beyond Binary Correctness: Scaling Evaluation of Long-Horizon Agents on Subjective Enterprise Tasks `Domain-Agent`
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.27646)] PRBench: End-to-end Paper Reproduction in Physics Research [[Code](https://github.com/HET-AGI/PRBench-Eval-Handson)] `Domain-Agent`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.03619)] Learning Query-Specific Rubrics from Human Preferences for DeepResearch Report Generation `Domain-Agent`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.11199)] When and What to Ask: AskBench and Rubric-Guided RLVR for LLM Clarification [[Code](https://github.com/jialeuuz/askbench)] `Domain-Agent`
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.12268)] CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use [[Code](https://github.com/namezhenzhang/CM2-RLCR-Tool-Agent)] `Domain-Agent`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.06487)] Technical Report Tongyi DeepResearch [[Code](https://github.com/Alibaba-NLP/qqr)] `Domain-Agent`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.06021)] Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards [[Code](https://github.com/THUDM/CaRR)] `Domain-Agent`
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.22511)] Mock Worlds, Real Skills: Building Small Agentic Language Models with Synthetic Tasks, Simulated Environments, and Rubric-Based Rewards [[Code](https://github.com/haruhi-sudo/SYNTHAGENT)] `Domain-Agent`
+
+#### 2025
+- [[arXiv 2025.12](https://arxiv.org/abs/2512.06196)] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment `Domain-Agent`
+- [[arXiv 2025.12](https://arxiv.org/abs/2512.20491)] Step-DeepResearch Technical Report [[Code](https://github.com/stepfun-ai/StepDeepResearch)] `Domain-Agent`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.11184)] Reinforcement Learning for Tool-Integrated Interleaved Thinking towards Cross-Domain Generalization `Domain-Agent`
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.12712)] Beyond Seeing: Evaluating Multimodal LLMs on Tool-Enabled Image Perception `Domain-Agent`
+- [[NeurIPS 25-W](https://openreview.net/forum?id=be76fus1ou)] Towards Real-World Evaluation of Agentic Work in Freelance Marketplaces `Domain-Agent`
+
+## LICENSE
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Contact
+If you have any questions or suggestions, please feel free to contact [Hongru Xiao](mailto:hongru_xiao@tongji.edu.cn).
+
+
+
