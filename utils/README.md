@@ -125,11 +125,11 @@ This organization helps show rubrics not only as evaluation tools, but also as s
 
 | Section | Role in the repository |
 |---|---|
-| **Basics** | Introduces what counts as a rubric, how rubric formats differ from preferences, rules, or scalar scores, and why structured criteria become useful in large-model settings. |
-| **Data** | Covers how rubrics are collected, generated, refined, and organized into reusable supervision signals through human annotation, synthetic generation, expert labeling, and rubric datasets. |
-| **Training** | Summarizes how rubric-level judgments can be transformed into SFT data, preference objectives, RL rewards, curriculum signals, and self-improvement loops. |
-| **Evaluation** | Connects rubrics to LLM-as-a-judge protocols, benchmark design, calibration, reliability analysis, and robustness checks, where explicit and auditable criteria are especially important. |
-| **Applications** | Shows how rubric-based methods extend beyond text QA to multimodal tasks, agent systems, and professional domains that require domain-specific standards. |
+| **📖 Basics** | Introduces what counts as a rubric, how rubric formats differ from preferences, rules, or scalar scores, and why structured criteria become useful in large-model settings. |
+| **🗂️ Data** | Covers how rubrics are collected, generated, refined, and organized into reusable supervision signals through human annotation, synthetic generation, expert labeling, and rubric datasets. |
+| **⚙️ Training** | Summarizes how rubric-level judgments can be transformed into SFT data, preference objectives, RL rewards, curriculum signals, and self-improvement loops. |
+| **🧑‍⚖️ Evaluation** | Connects rubrics to LLM-as-a-judge protocols, benchmark design, calibration, reliability analysis, and robustness checks, where explicit and auditable criteria are especially important. |
+| **🌐 Applications** | Shows how rubric-based methods extend beyond text QA to multimodal tasks, agent systems, and professional domains that require domain-specific standards. |
 
 Overall, this structure follows the lifecycle of rubric-based large-model alignment:
 
