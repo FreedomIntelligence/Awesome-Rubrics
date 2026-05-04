@@ -63,7 +63,7 @@ As large models become more capable, progress is increasingly bottlenecked by **
 ## Growing Research Momentum
 
 <p align="center">
-  <img src="Tending.png" alt="Growing number of rubric-related papers" width="820">
+  <img src="Tending.png" alt="Growing number of rubric-related papers" width="1080">
 </p>
 
 <p align="center"><i>Figure 2. The number of rubric-related papers has grown rapidly, suggesting increasing research attention to structured evaluation and reward design.</i></p>
