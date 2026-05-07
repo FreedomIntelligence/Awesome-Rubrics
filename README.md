@@ -22,7 +22,7 @@
   <a href="#table-of-contents">Table of Contents</a>
 </p>
 
-Papers with publicly released code or project resources include an inline `[[Code](...)]` link. Entries without verified repositories omit that link. Each paper ends with a gray section tag, so readers can quickly see why it is placed there.
+Papers with publicly released code or project resources include an inline `[[Code](...)]` link. Entries without verified repositories omit that link.
 
 > Contributions are welcome. If you find missing papers, inaccurate classifications, or newly released code, feel free to update this list.
 
