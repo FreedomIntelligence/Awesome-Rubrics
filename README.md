@@ -606,9 +606,9 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 ##### 2026
 
 - 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.13691)] QuarkMedBench: A Real-World Scenario Driven Benchmark for Evaluating Large Language Models [[Code](https://github.com/Quark-Medical/QuarkMedBench_Technical_Report)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Evaluation%20Benchmark&amp;color=9A7F55&amp;style=flat-square" alt="Evaluation Benchmark"> <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
 - [[arXiv 2026.03](https://arxiv.org/abs/2603.23519)] MedMT-Bench: Can LLMs Memorize and Understand Long Multi-Turn Conversations in Medical Scenarios? <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Evaluation%20Benchmark&amp;color=9A7F55&amp;style=flat-square" alt="Evaluation Benchmark"> <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
 - 🌟 [[arXiv 2026.02](https://arxiv.org/abs/2602.09653)] ClinAlign: Scaling Healthcare Alignment from Clinician Preference [[Code](https://github.com/AQ-MedAI/ClinAlign)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
 - [[arXiv 2026.02](https://arxiv.org/abs/2602.10367)] LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation <br>
