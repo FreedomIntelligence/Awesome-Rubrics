@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="#what-are-rubrics">What are Rubrics?</a> ·
-  <a href="#why-rubrics-matter-now">Why Rubrics Matter</a> ·
+  <a href="#why-rubrics-matter-now">Why Rubrics Matter?</a> ·
   <a href="#repository-map">Repository Map</a> ·
   <a href="#table-of-contents">Table of Contents</a>
 </p>
