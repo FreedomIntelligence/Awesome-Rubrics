@@ -1,4 +1,4 @@
-<h1 align="center">Awesome Rubrics</h1>
+<h1 align="center">Awesome-Rubrics</h1>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Survey%20Paper-Coming%20soon-blue" alt="Survey Paper"></a>
