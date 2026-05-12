@@ -481,7 +481,7 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 - 🌟 [[arXiv 2025.05](https://arxiv.org/abs/2505.13388)] R3: Robust Rubric-Agnostic Reward Models [[Code](https://github.com/rubricreward/r3)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design"> <img src="https://img.shields.io/static/v1?label=&amp;message=LLM-as-a-Judge%20and%20Reward%20Reasoning&amp;color=5F8791&amp;style=flat-square" alt="LLM-as-a-Judge and Reward Reasoning">
 - 🌟 [[arXiv 2025.01](https://arxiv.org/abs/2501.15595)] SedarEval: Automated Evaluation using Self-Adaptive Rubrics [[Code](https://github.com/wwn1233/sedareval)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design"> <img src="https://img.shields.io/static/v1?label=&amp;message=LLM-as-a-Judge%20and%20Reward%20Reasoning&amp;color=5F8791&amp;style=flat-square" alt="LLM-as-a-Judge and Reward Reasoning">
+  <img src="https://img.shields.io/static/v1?label=&amp;message=LLM-as-a-Judge%20and%20Reward%20Reasoning&amp;color=5F8791&amp;style=flat-square" alt="LLM-as-a-Judge and Reward Reasoning">
 
 #### Statistical and Uncertainty-Aware Evaluation
 
