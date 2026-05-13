@@ -170,7 +170,6 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
       - [Rubric-Structured Curriculum Learning](#rubric-structured-curriculum-learning)
       - [Rubric-Guided Self-Improvement](#rubric-guided-self-improvement)
   - [Rubric-Based Evaluation](#rubric-based-evaluation)
-    - [Evaluation Methods](#evaluation-methods)
     - [LLM-as-a-Judge and Reward Reasoning](#llm-as-a-judge-and-reward-reasoning)
     - [Statistical and Uncertainty-Aware Evaluation](#statistical-and-uncertainty-aware-evaluation)
     - [Rubric-Based Evaluation Benchmarks](#rubric-based-evaluation-benchmarks)
@@ -440,8 +439,6 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
   <img src="https://img.shields.io/static/v1?label=&amp;message=Self-Improvement&amp;color=8A735F&amp;style=flat-square" alt="Self-Improvement">
 
 ### Rubric-Based Evaluation
-
-#### Evaluation Methods
 
 > Evaluation methods focus on how rubrics are used to judge outputs reliably and consistently across tasks. This includes LLM-as-a-judge settings, rubric-aware reward reasoning, and methods that improve interpretability of evaluation.
 
