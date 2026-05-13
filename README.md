@@ -359,7 +359,7 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 > Methods in this section design, generate, calibrate, or densify rubric-based reward signals, including reward models, LLM judges, checklist rewards, and rubric-to-token supervision.
 
 ###### 2026
-- [[arXiv 2026.05](https://arxiv.org/abs/2605.08354v1)] Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria [[Code](https://github.com/OpenEnvision/AutoRubric-as-Reward)] <br>
+- 🌟 [[arXiv 2026.05](https://arxiv.org/abs/2605.08354v1)] Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria [[Code](https://github.com/OpenEnvision/AutoRubric-as-Reward)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Policy%20Optimization&amp;color=806F95&amp;style=flat-square" alt="Policy Optimization"> <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design">
 - [[Tech Report 2026.04](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf)] DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence [[Model](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design">
