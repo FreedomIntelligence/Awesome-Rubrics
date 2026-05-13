@@ -151,14 +151,6 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 <details open>
 <summary>Browse the reading list</summary>
 
-- [What are Rubrics?](#what-are-rubrics)
-- [Why Rubrics Matter Now](#why-rubrics-matter-now)
-- [Growing Research Momentum](#growing-research-momentum)
-- [From Evaluation to Reward](#from-evaluation-to-reward)
-- [A Minimal Rubric Example](#a-minimal-rubric-example)
-- [Rubric Generation Strategies](#rubric-generation-strategies)
-- [Repository Map](#repository-map)
-- [Table of Contents](#table-of-contents)
 - [Foundations of Rubric-Based Evaluation](#foundations-of-rubric-based-evaluation)
   - [Rubric Definitions and Boundaries](#rubric-definitions-and-boundaries)
     - [2025](#2025)
@@ -224,8 +216,6 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
     - [Agentic Tasks](#agentic-tasks)
       - [2026](#2026-14)
       - [2025](#2025-16)
-- [LICENSE](#license)
-- [Contact](#contact)
 
 </details>
 
