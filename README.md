@@ -152,37 +152,51 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 <details open>
 <summary>Browse the reading list</summary>
 
-- [Foundations of Rubric-Based Evaluation](#foundations-of-rubric-based-evaluation)
-  - [Rubric Definitions and Boundaries](#rubric-definitions-and-boundaries)
-  - [Rubric Representation and Scoring Schemas](#rubric-representation-and-scoring-schemas)
-  - [Traditional Domain Usage](#traditional-domain-usage)
-  - [Why Foundation Models Need Rubrics](#why-foundation-models-need-rubrics)
-- [Rubrics for Foundation-Model Alignment and Evaluation](#rubrics-for-foundation-model-alignment-and-evaluation)
-  - [Rubric Construction and Data Sources](#rubric-construction-and-data-sources)
-    - [Synthetic Rubric Generation](#synthetic-rubric-generation)
-    - [Human- and Expert-Grounded Rubric Data](#human--and-expert-grounded-rubric-data)
-  - [Rubric-Guided Training and Post-Training](#rubric-guided-training-and-post-training)
-    - [Pre-training](#pre-training)
-    - [Post-training](#post-training)
-      - [Rubric-Guided Supervised Fine-Tuning](#rubric-guided-supervised-fine-tuning)
-      - [Rubric-Guided Preference Tuning](#rubric-guided-preference-tuning)
-      - [Rubric-Aware Policy Optimization](#rubric-aware-policy-optimization)
-      - [Rubric-Based Reward Modeling and Signal Design](#rubric-based-reward-modeling-and-signal-design)
-      - [Rubric-Structured Curriculum Learning](#rubric-structured-curriculum-learning)
-      - [Rubric-Guided Self-Improvement](#rubric-guided-self-improvement)
-  - [Rubric-Based Evaluation](#rubric-based-evaluation)
-    - [LLM-as-a-Judge and Reward Reasoning](#llm-as-a-judge-and-reward-reasoning)
-    - [Statistical and Uncertainty-Aware Evaluation](#statistical-and-uncertainty-aware-evaluation)
-    - [Rubric-Based Evaluation Benchmarks](#rubric-based-evaluation-benchmarks)
-- [Application Settings of Rubrics](#application-settings-of-rubrics)
-  - [Rubrics Across Modalities](#rubrics-across-modalities)
-    - [Text Modality](#text-modality)
-    - [Vision Modality](#vision-modality)
-    - [Audio Modality](#audio-modality)
-  - [Rubrics Across Domains](#rubrics-across-domains)
+- [Data](#data)
+  - [Expert-Based Annotation](#expert-based-annotation)
+    - [Expert Requirement](#expert-requirement)
+    - [Expert Provider](#expert-provider)
+  - [Model-Based Annotation](#model-based-annotation)
+    - [Naive Generation Analysis](#naive-generation-analysis)
+    - [Pairs-Grounded Generation](#pairs-grounded-generation)
+    - [Iterative Refinement](#iterative-refinement)
+  - [Human-AI Collaboration](#human-ai-collaboration)
+- [Training](#training)
+  - [Pre-training](#pre-training)
+  - [Post-training](#post-training)
+    - [Rubrics for Supervised FT](#rubrics-for-supervised-ft)
+    - [Rubrics for Preference-Reward RL](#rubrics-for-preference-reward-rl)
+    - [Rubrics for Direct-Reward RL](#rubrics-for-direct-reward-rl)
+      - [Rubric Judgement Pattern](#rubric-judgement-pattern)
+      - [Rubric Grader Analysis](#rubric-grader-analysis)
+      - [Multi-Objective Optimization](#multi-objective-optimization)
+      - [Credit Assignment](#credit-assignment)
+      - [Agent Harness](#agent-harness)
+    - [Rubrics for Advanced Training](#rubrics-for-advanced-training)
+      - [Curriculum Learning](#curriculum-learning)
+      - [Self-Evolving Learning](#self-evolving-learning)
+      - [Hint-Based Learning](#hint-based-learning)
+- [Inference](#inference)
+  - [Inference-Time Rubric Supervision](#inference-time-rubric-supervision)
+- [Risk](#risk)
+  - [Rubric Reward Hacking](#rubric-reward-hacking)
+- [Evaluation](#evaluation)
+  - [Real-World Tasks](#real-world-tasks)
+  - [General Capability Evaluation](#general-capability-evaluation)
+    - [Agentic](#agentic)
+    - [Reasoning](#reasoning)
+    - [Alignment](#alignment)
+- [Applications](#applications)
+  - [Domain](#domain)
     - [Medical](#medical)
-    - [Software Engineering and Code Agents](#software-engineering-and-code-agents)
-    - [Agentic Tasks](#agentic-tasks)
+    - [Writing and Retrieval](#writing-and-retrieval)
+    - [DeepResearch](#deepresearch)
+    - [Code](#code)
+    - [General Agentic](#general-agentic)
+  - [Multimodal](#multimodal)
+    - [Text + Vision](#text--vision)
+    - [Text + Audio](#text--audio)
+    - [Omni-Modal](#omni-modal)
 
 </details>
 
@@ -190,95 +204,134 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 > Papers with publicly released code are marked with 🌟.
 
-## Foundations of Rubric-Based Evaluation
+## Data
 
-### Rubric Definitions and Boundaries
-> Rubrics define structured evaluation dimensions, scoring rules, and judgment boundaries for open-ended model outputs. This section covers work that clarifies what counts as a rubric and how rubrics function as judges or reward criteria.
+### Expert-Based Annotation
 
-#### 2025
+#### Expert Requirement
+
+##### 2026
+
+- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.07244)] PresentBench: A Fine-Grained Rubric-Based Benchmark for Slide Generation [[Proj](https://presentbench.github.io/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+- 🌟 [[arXiv 2026.01](https://arxiv.org/abs/2601.16669)] PLAW BENCH: A Rubric-Based Benchmark for Evaluating LLMs in Real-World Legal Practice [[Code](https://github.com/SKYLENAGE-AI/PLawBench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+
+##### 2025
+
+- 🌟 [[arXiv 2025.11](https://arxiv.org/abs/2511.11562)] PRBench: Large-Scale Expert Rubrics for Evaluating High-Stakes Professional Reasoning [[Proj](https://scale.com/research/prbench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+- 🌟 [[ACL 26](https://arxiv.org/abs/2511.10507)] AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following [[Code](https://github.com/facebookresearch/AdvancedIF)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+- 🌟 [[ICLR 26](https://openreview.net/forum?id=VwNzKPqBxk)] ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge [[Code](https://github.com/NVlabs/ProfBench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+- 🌟 [[arXiv 2025.06](https://arxiv.org/abs/2506.01789)] Datasheets Aren't Enough: DataRubrics for Automated Quality Metrics and Accountability [[Proj](https://datarubrics.github.io/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+- 🌟 [[arXiv 2025.05](https://arxiv.org/abs/2505.08775)] HealthBench: Evaluating Large Language Models Towards Improved Human Health [[Proj](https://openai.com/index/healthbench/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement">
+
+#### Expert Provider
+
+##### 2026
+
+- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2604.02368)] XpertBench: Expert Level Tasks with Rubrics-Based Evaluation [[Proj](https://xpert.bytedance.com/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider">
+- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.01562)] RubricBench: Aligning Model-Generated Rubrics with Human Standards [[Code](https://github.com/planepig/rubricbench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider">
+
+##### 2025
+
+- 🌟 [[arXiv 2025.12](https://arxiv.org/abs/2512.04921)] The AI Consumer Index (ACE) [[Proj](https://www.mercor.com/apex/ace-leaderboard/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider">
+- 🌟 [[ICLR 26](https://openreview.net/forum?id=ErnvfmSX0P)] RESEARCH RUBRICS: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents [[Proj](https://labs.scale.com/papers/researchrubrics)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider">
+- 🌟 [[arXiv 2025.09](https://arxiv.org/abs/2509.25721)] The AI Productivity Index: APEX-v1-extended [[Proj](https://www.mercor.com/apex/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider">
+- 🌟 [[ICLR 26](https://openreview.net/forum?id=nJvgBolRcR)] ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists [[Proj](https://huggingface.co/spaces/launch/ExpertLongBench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider">
+
+### Model-Based Annotation
+
+#### Naive Generation Analysis
+
+##### 2026
+
+- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.23522)] Qworld: Question-Specific Evaluation Criteria for LLMs [[Code](https://github.com/mims-harvard/Qworld)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Naive%20Generation%20Analysis&amp;color=4F6F73&amp;style=flat-square" alt="Naive Generation Analysis">
+- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.20882)] RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation [[Data](https://huggingface.co/datasets/kdhole/healthbench-rubric-responses)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Naive%20Generation%20Analysis&amp;color=4F6F73&amp;style=flat-square" alt="Naive Generation Analysis">
+- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.07019)] AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge [[Code](https://github.com/ChicagoHAI/AutoChecklist)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Naive%20Generation%20Analysis&amp;color=4F6F73&amp;style=flat-square" alt="Naive Generation Analysis">
+
+##### 2025
+
+- 🌟 [[ACL 26](https://arxiv.org/abs/2510.07743)] OpenRubrics: Towards Scalable Synthetic Rubric Generation for Reward Modeling and LLM Alignment [[Model](https://huggingface.co/OpenRubrics/RubricRM-4B-Rubric)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Naive%20Generation%20Analysis&amp;color=4F6F73&amp;style=flat-square" alt="Naive Generation Analysis">
+
+#### Pairs-Grounded Generation
+
+##### 2026
+
+- [[arXiv 2026.02](https://arxiv.org/abs/2602.03619)] Learning Query-Specific Rubrics from Human Preferences for DeepResearch Report Generation <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
+
+##### 2025
+
 - 🌟 [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Definition&amp;color=5F6F89&amp;style=flat-square" alt="Definition"> <img src="https://img.shields.io/static/v1?label=&amp;message=Format&amp;color=4F6F73&amp;style=flat-square" alt="Format"> <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design"> <img src="https://img.shields.io/static/v1?label=&amp;message=LLM-as-a-Judge%20and%20Reward%20Reasoning&amp;color=5F8791&amp;style=flat-square" alt="LLM-as-a-Judge and Reward Reasoning">
-- [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains [[Data](https://huggingface.co/collections/ScaleAI/rar)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Definition&amp;color=5F6F89&amp;style=flat-square" alt="Definition"> <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data">
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.07284)] Online Rubrics Elicitation from Pairwise Comparisons <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
+- 🌟 [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains [[Data](https://huggingface.co/datasets/ScaleAI/RaR-Science)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
+- 🌟 [[arXiv 2025.06](https://arxiv.org/abs/2506.15651)] AutoRule: Reasoning Chain-of-Thought Extracted Rule-Based Rewards Improve Preference Learning [[Code](https://github.com/cxcscmu/AutoRule)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
 
-#### 2024
-- [[Blog 2024.11](https://lilianweng.github.io/posts/2024-11-28-reward-hacking/)] Reward Hacking in Reinforcement Learning <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Definition&amp;color=5F6F89&amp;style=flat-square" alt="Definition">
+##### 2024
 
-### Rubric Representation and Scoring Schemas
+- [[ACL Findings 2025](https://aclanthology.org/2025.findings-acl.114/)] CARMO: Dynamic Criteria Generation for Context Aware Reward Modelling <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
 
-> This section focuses on how rubrics are expressed, including dimensions, levels, weights, and scoring templates. It is useful for understanding the representational form that makes rubric-based supervision reusable and controllable.
+#### Iterative Refinement
 
+##### 2026
+
+- 🌟 [[ICLR 26](https://openreview.net/forum?id=vFcm5sOitq)] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation [[Code](https://github.com/FanZT6/OptimSyn)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Iterative%20Refinement&amp;color=806F95&amp;style=flat-square" alt="Iterative Refinement">
+- [[arXiv 2026.03](https://arxiv.org/abs/2603.00451)] Confusion-Aware Rubric Optimization for LLM-based Automated Grading <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Iterative%20Refinement&amp;color=806F95&amp;style=flat-square" alt="Iterative Refinement">
+- [[ICLR 26](https://openreview.net/forum?id=aA2PXFH2Cp)] Rethinking Rubric Generation for Improving LLM Judge and Reward Modeling for Open-ended Tasks <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Iterative%20Refinement&amp;color=806F95&amp;style=flat-square" alt="Iterative Refinement">
+- [[arXiv 2026.01](https://arxiv.org/abs/2601.18706)] Health-SCORE: Towards Scalable Rubrics for Improving Health-LLMs <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Iterative%20Refinement&amp;color=806F95&amp;style=flat-square" alt="Iterative Refinement">
+- 🌟 [[ACL 26](https://arxiv.org/abs/2601.08430)] RubricHub: A Comprehensive and Highly Discriminative Rubric Dataset via Automated Coarse-to-Fine Generation [[Code](https://github.com/teqkilla/RubricHub)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Iterative%20Refinement&amp;color=806F95&amp;style=flat-square" alt="Iterative Refinement">
+
+##### 2025
+
+- 🌟 [[ICLR 26](https://openreview.net/forum?id=dBmjnRR1bC)] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks [[Proj](https://mianwu01.github.io/RLAC_website/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Iterative%20Refinement&amp;color=806F95&amp;style=flat-square" alt="Iterative Refinement">
+
+### Human-AI Collaboration
 
 #### 2026
-- [[arXiv 2026.03](https://arxiv.org/abs/2603.07019)] AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Format&amp;color=4F6F73&amp;style=flat-square" alt="Format"> <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design"> <img src="https://img.shields.io/static/v1?label=&amp;message=LLM-as-a-Judge%20and%20Reward%20Reasoning&amp;color=5F8791&amp;style=flat-square" alt="LLM-as-a-Judge and Reward Reasoning">
 
-#### 2025
-- 🌟 [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Definition&amp;color=5F6F89&amp;style=flat-square" alt="Definition"> <img src="https://img.shields.io/static/v1?label=&amp;message=Format&amp;color=4F6F73&amp;style=flat-square" alt="Format"> <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design"> <img src="https://img.shields.io/static/v1?label=&amp;message=LLM-as-a-Judge%20and%20Reward%20Reasoning&amp;color=5F8791&amp;style=flat-square" alt="LLM-as-a-Judge and Reward Reasoning">
-
-### Traditional Domain Usage
-
-- No retained papers after full-text justification review.
-
-### Why Foundation Models Need Rubrics
-
-#### 2025
-- 🌟 [[ICLR 26](https://openreview.net/forum?id=pBjy4ek2QV)] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training [[Code](https://github.com/Jun-Kai-Zhang/rubrics)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Why%20Rubrics&amp;color=64748B&amp;style=flat-square" alt="Why Rubrics">
-
-## Rubrics for Foundation-Model Alignment and Evaluation
-
-### Rubric Construction and Data Sources
-
-#### Synthetic Rubric Generation
-
-> Synthetic rubric generation uses generated tasks, labels, critiques, or rubric annotations to expand supervision beyond limited human labeling. It is especially useful when rubric-style feedback can be programmatically produced at scale for reward modeling or post-training.
-
-##### 2026
-
-- 🌟 [[arXiv 2026.02](https://arxiv.org/abs/2602.09653)] ClinAlign: Scaling Healthcare Alignment from Clinician Preference [[Code](https://github.com/AQ-MedAI/ClinAlign)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
-- 🌟 [[arXiv 2026.01](https://arxiv.org/abs/2601.08430)] RubricHub: A Comprehensive and Highly Discriminative Rubric Dataset via Automated Coarse-to-Fine Generation [[Code](https://github.com/teqkilla/RubricHub)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design">
-
-##### 2025
-- [[arXiv 2025.10](https://arxiv.org/abs/2510.07743)] OpenRubrics: Towards Scalable Synthetic Rubric Generation for Reward Modeling and LLM Alignment [[Data](https://huggingface.co/datasets/OpenRubrics/OpenRubrics)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Preference%20Tuning&amp;color=9B6B6B&amp;style=flat-square" alt="Preference Tuning"> <img src="https://img.shields.io/static/v1?label=&amp;message=Reward%20Modeling%20and%20Signal%20Design&amp;color=9A8A58&amp;style=flat-square" alt="Reward Modeling and Signal Design">
-- 🌟 [[ICLR 26](https://openreview.net/forum?id=vFcm5sOitq)] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation [[Code](https://github.com/FanZT6/OptimSyn)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data">
-- [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains [[Data](https://huggingface.co/collections/ScaleAI/rar)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Definition&amp;color=5F6F89&amp;style=flat-square" alt="Definition"> <img src="https://img.shields.io/static/v1?label=&amp;message=Synthetic%20Data&amp;color=6F8F72&amp;style=flat-square" alt="Synthetic Data">
-
-#### Human- and Expert-Grounded Rubric Data
-
-> Human- and expert-grounded rubric data refers to signals from human preferences, authentic interactions, or domain specialists. These sources are important when alignment targets depend on nuanced standards that are hard to synthesize fully.
-
-##### 2026
-
-- 🌟 [[arXiv 2026.04](https://arxiv.org/abs/2604.02368)] Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation [[Code](https://github.com/randomtutu/Xpertbench)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Evaluation%20Benchmark&amp;color=9A7F55&amp;style=flat-square" alt="Evaluation Benchmark"> <img src="https://img.shields.io/static/v1?label=&amp;message=Agentic%20Tasks&amp;color=7B6F86&amp;style=flat-square" alt="Agentic Tasks">
-- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.07244)] PresentBench: A Fine-Grained Rubric-Based Benchmark for Slide Generation [[Code](https://github.com/PresentBench/PresentBench)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Agentic%20Tasks&amp;color=7B6F86&amp;style=flat-square" alt="Agentic Tasks">
+- 🌟 [[arXiv 2026.04](https://arxiv.org/abs/2604.02368)] XpertBench: Expert Level Tasks with Rubrics-Based Evaluation [[Proj](https://xpert.bytedance.com/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider"> <img src="https://img.shields.io/static/v1?label=&amp;message=Human-AI%20Collaboration&amp;color=5F8791&amp;style=flat-square" alt="Human-AI Collaboration">
 - 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.01562)] RubricBench: Aligning Model-Generated Rubrics with Human Standards [[Code](https://github.com/planepig/rubricbench)] <br>
-   <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Evaluation%20Benchmark&amp;color=9A7F55&amp;style=flat-square" alt="Evaluation Benchmark">
-- 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.27646)] PRBench: End-to-end Paper Reproduction in Physics Research [[Code](https://github.com/HET-AGI/PRBench-Eval-Handson)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Agentic%20Tasks&amp;color=7B6F86&amp;style=flat-square" alt="Agentic Tasks">
-- [[arXiv 2026.01](https://arxiv.org/abs/2601.18706)] Health-SCORE: Towards Scalable Rubrics for Improving Health-LLMs <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Provider&amp;color=7B6F86&amp;style=flat-square" alt="Expert Provider"> <img src="https://img.shields.io/static/v1?label=&amp;message=Human-AI%20Collaboration&amp;color=5F8791&amp;style=flat-square" alt="Human-AI Collaboration">
+- 🌟 [[arXiv 2026.02](https://arxiv.org/abs/2602.09653)] ClinAlign: Scaling Healthcare Alignment from Clinician Preference [[Code](https://github.com/AQ-MedAI/ClinAlign)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Human-AI%20Collaboration&amp;color=5F8791&amp;style=flat-square" alt="Human-AI Collaboration">
 
+#### 2025
 
-##### 2025
+- 🌟 [[ICLR 25](https://proceedings.iclr.cc/paper_files/paper/2025/hash/771155abaae744e08576f1f3b4b7ac0d-Abstract-Conference.html)] WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild [[Code](https://github.com/allenai/WildBench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Human-AI%20Collaboration&amp;color=5F8791&amp;style=flat-square" alt="Human-AI Collaboration">
 
-- [[arXiv 2025.10](https://arxiv.org/abs/2510.22143)] Benchmarking and Learning Real-World Customer Service Dialogue <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Text%20Modality&amp;color=8A6F8F&amp;style=flat-square" alt="Text Modality">
-- 🌟 [[ICLR 26](https://openreview.net/forum?id=QOWYX3Q2XS)] MENLO: From Preferences to Proficiency - Evaluating and Modeling Native-like Quality Across 47 Languages [[Code](https://huggingface.co/datasets/facebook/menlo)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data">
-- 🌟 [[arXiv 2025.05](https://arxiv.org/abs/2505.08775)] HealthBench: Evaluating Large Language Models Towards Improved Human Health [[Code](https://github.com/openai/simple-evals)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Evaluation%20Benchmark&amp;color=9A7F55&amp;style=flat-square" alt="Evaluation Benchmark"> <img src="https://img.shields.io/static/v1?label=&amp;message=Medical&amp;color=5F8A75&amp;style=flat-square" alt="Medical">
-- 🌟 [[arXiv 2025.04](https://arxiv.org/abs/2504.01848)] PaperBench: Evaluating AI's Ability to Replicate AI Research [[Code](https://github.com/openai/preparedness/tree/main/project/paperbench)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Human%20Data&amp;color=6B8F8F&amp;style=flat-square" alt="Human Data"> <img src="https://img.shields.io/static/v1?label=&amp;message=Evaluation%20Benchmark&amp;color=9A7F55&amp;style=flat-square" alt="Evaluation Benchmark">
+#### 2024
+
+- 🌟 [[ICLR 24](https://openreview.net/forum?id=CYmF38ysDa)] FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets [[Code](https://github.com/kaistAI/FLASK)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Human-AI%20Collaboration&amp;color=5F8791&amp;style=flat-square" alt="Human-AI Collaboration">
+
 
 
 ### Rubric-Guided Training and Post-Training
