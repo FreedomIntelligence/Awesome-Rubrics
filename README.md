@@ -21,13 +21,7 @@
 - **[2026-06]** Our survey paper, *Structuring Human Objectives: A Survey of Rubrics for Evaluation, Alignment, and Agentic AI*, is now available: [PDF](./Rubric_Survey_Paper.pdf).
 
 
-
-<p align="center">
-  <a href="#what-are-rubrics">What are Rubrics?</a> ·
-  <a href="#why-rubrics-matter-now">Why Rubrics Matter?</a> ·
-  <a href="#repository-map">Repository Map</a> ·
-  <a href="#table-of-contents">Table of Contents</a>
-</p>
+---
 
 Papers with publicly released code or project resources include an inline `[[Code](...)]` link. Entries without verified repositories omit that link.
 
