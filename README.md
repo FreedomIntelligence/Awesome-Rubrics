@@ -887,7 +887,7 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 > Applications use rubrics as practical task interfaces: they guide generation, evaluation, training, or refinement in concrete systems rather than only proposing benchmarks.
 
-### Domain Applications
+### Domain
 
 > Domain applications apply rubrics within specific task settings such as healthcare, writing, retrieval, deep research, code, and agent workflows.
 
@@ -982,7 +982,7 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 - [[arXiv 2025.12](https://arxiv.org/abs/2512.06196)] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=General%20Agentic&amp;color=8B6F9F&amp;style=flat-square" alt="General Agentic">
 
-### Multimodal Applications
+### Multimodal
 
 > Multimodal applications extend rubric supervision beyond text, using criteria to assess or train systems that combine language with vision, speech, or omni-modal signals.
 
