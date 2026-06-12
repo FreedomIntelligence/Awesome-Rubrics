@@ -26,7 +26,7 @@
 
 ---
 
-Papers with publicly released code or project resources include an inline `[[Code](...)]` link. Entries without verified repositories omit that link.
+Papers with publicly released code or project resources are marked with inline `[[Code](...)]` or `[[Proj](...)]` links. Entries without verified repositories omit that link.
 
 > Contributions are welcome. If you find missing papers, inaccurate classifications, or newly released code, feel free to update this list.
 
@@ -91,7 +91,7 @@ Evaluation is no longer only a post-hoc metric. It is becoming part of the **inf
 🧑‍⚖️ Expert Standards → 📋 Rubrics → 📊 Evaluation Signals → 🎯 Rewards → 🔁 Training Dynamics
 ```
 
-Rubrics are therefore not just for judging model outputs. They are a way to **automate parts of expert feedback**: experts define criteria, models apply them at scale, and failures reveal where the rubric or judge must be revised. In this sense, evaluation becomes an executable form of domain knowledge.
+Rubrics are therefore not just for judging model outputs. They provide a way to **automate parts of expert feedback**: experts define criteria, models apply them at scale, and failures reveal where the rubric or judge must be revised. In this sense, evaluation becomes an executable form of domain knowledge.
 
 ## A Minimal Rubric Example
 
@@ -137,7 +137,6 @@ This organization helps show rubrics not only as evaluation tools, but also as s
 
 | Section | Role in the repository |
 |---|---|
-| **Foundations** | Introduces what counts as a rubric, how rubric formats differ from preferences, rules, or scalar scores, and why structured criteria become useful in large-model settings. |
 | **Data** | Covers how rubrics are collected, generated, refined, and organized into reusable supervision signals through human annotation, synthetic generation, expert labeling, and rubric datasets. |
 | **Training** | Summarizes how rubric-level judgments can be transformed into SFT data, preference objectives, RL rewards, curriculum signals, and self-improvement loops. |
 | **Evaluation** | Connects rubrics to LLM-as-a-judge protocols, benchmark design, calibration, reliability analysis, and robustness checks, where explicit and auditable criteria are especially important. |
@@ -215,7 +214,7 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 ## Data
 
-> This section collects work on how rubric criteria, checklists, and rubric-annotated data are authored, elicited, generated, refined, and validated before being used for evaluation or training.
+> This section collects work on how rubrics are created, refined, and validated before use in evaluation or training.
 
 ### Expert-Based Annotation
 
