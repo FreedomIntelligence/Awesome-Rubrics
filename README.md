@@ -303,7 +303,7 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 - 🌟 [[arXiv 2025.10](https://arxiv.org/abs/2510.17314)] From Implicit Weights to Explicit Rubrics: A Training-Free Framework for Reward Modeling [[Code](https://github.com/agentscope-ai/OpenJudge)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation">
-- 🌟 [[arXiv 2025.10](https://arxiv.org/abs/2510.07284)] Online Rubrics Elicitation from Pairwise Comparisons [[Proj](https://scale.com/research/onlinerubrics)] <br>
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.07284)] Online Rubrics Elicitation from Pairwise Comparisons  <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation"> <img src="https://img.shields.io/static/v1?label=&amp;message=Self-Evolving%20Learning&amp;color=5F6F89&amp;style=flat-square" alt="Self-Evolving Learning">
 - 🌟 [[ICLR 26](https://openreview.net/forum?id=c1bTcrDmt4)] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains [[Data](https://huggingface.co/datasets/ScaleAI/RaR-Science)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Pairs-Grounded%20Generation&amp;color=9A8A58&amp;style=flat-square" alt="Pairs-Grounded Generation"> <img src="https://img.shields.io/static/v1?label=&amp;message=Rubric%20Judgement%20Pattern&amp;color=6D7FA3&amp;style=flat-square" alt="Rubric Judgement Pattern">
