@@ -112,22 +112,6 @@ a rubric does not directly ask "which answer is better?" It decomposes the judgm
 
 This makes the reward more interpretable, decomposable, and actionable.
 
-## Rubric Generation Strategies
-
-<p align="center">
-  <img src="./utils/gen.jpg" alt="Rubric generation strategies" width="820">
-</p>
-
-<p align="center"><i>Figure 3. Rubric construction paradigms for large model alignment.</i></p>
-
-| Strategy | Core idea | When it is useful |
-|---|---|---|
-| **Expert direct annotation** | Experts write criteria explicitly. | High-stakes domains and seed rubrics |
-| **Induction from expert QA annotations** | Criteria are extracted from annotated examples. | Scaling expert knowledge beyond manual templates |
-| **Distillation from teacher demonstrations** | Rubrics are derived from high-quality model outputs. | Bootstrapping scalable reward signals |
-
-Together, these strategies show how rubric construction moves from manual specification toward data-driven induction and model-driven distillation.
-
 
 ## Repository Map
 
