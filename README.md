@@ -20,6 +20,19 @@
 
 - **[2026-06]** Our survey paper, *Structuring Human Objectives: A Survey of Rubrics for Evaluation, Alignment, and Agentic AI*, is now available: [PDF](./Rubric_Survey_Paper.pdf).
 
+
+```bib
+@misc{xiao2026structuring,
+  title        = {Structuring Human Objectives: A Survey of Rubrics for Evaluation, Alignment, and Agentic AI},
+  author       = {Xiao, Hongru and Li, Jie and Li, Zhirui and Yang, Bin and Li, Xiang and Li, Sunzhu and Han, Jiale},
+  year         = {2026},
+  month        = jun,
+  note         = {Available at SSRN: \url{https://ssrn.com/abstract=6970459}},
+  doi          = {10.2139/ssrn.6970459}
+}
+```
+
+
 <p align="center">
   <img src="./utils/Taxonomy.jpg" alt="Taxonomy of rubric-centered supervision" width="95%">
 </p>
