@@ -859,6 +859,8 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 - 🌟 [[arXiv 2025.11](https://arxiv.org/abs/2511.10507)] AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following [[Code](https://github.com/facebookresearch/AdvancedIF)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Expert%20Requirement&amp;color=5F8A75&amp;style=flat-square" alt="Expert Requirement"> <img src="https://img.shields.io/static/v1?label=&amp;message=Alignment&amp;color=9B6B6B&amp;style=flat-square" alt="Alignment">
+- [[EMNLP 25](https://aclanthology.org/2025.findings-emnlp.1123/)] QA-LIGN: Aligning LLMs through Constitutionally Decomposed QA <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Alignment&amp;color=9B6B6B&amp;style=flat-square" alt="Alignment">
 - 🌟 [[NeurIPS 25](https://arxiv.org/abs/2503.07539)] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following [[Code](https://github.com/zhenyuli801/XIFBench)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Alignment&amp;color=9B6B6B&amp;style=flat-square" alt="Alignment">
 - 🌟 [[arXiv 2025.01](https://arxiv.org/abs/2501.17399)] MultiChallenge: A Realistic Multi-Turn Conversation Evaluation Benchmark Challenging to Frontier LLMs [[Code](https://github.com/ekwinox117/multi-challenge)] <br>
