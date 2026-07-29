@@ -807,6 +807,8 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
   <img src="https://img.shields.io/static/v1?label=&amp;message=Agentic&amp;color=4B5563&amp;style=flat-square" alt="Agentic">
 - 🌟 [[arXiv 2026.02](https://arxiv.org/abs/2602.11199)] When and What to Ask: AskBench and Rubric-Guided RLVR for LLM Clarification [[Code](https://github.com/jialeuuz/askbench)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Agentic&amp;color=4B5563&amp;style=flat-square" alt="Agentic">
+- 🌟 [[arXiv 2026.04](https://arxiv.org/abs/2604.08523)] ClawBench: Can AI Agents Complete Everyday Online Tasks? [[Code](https://github.com/TIGER-AI-Lab/ClawBench)] [[Proj](https://claw-bench.com/)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Agentic&amp;color=4B5563&amp;style=flat-square" alt="Agentic">
 
 ##### 2025
 
