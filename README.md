@@ -842,6 +842,8 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 ##### 2026
 
+- 🌟 [[arXiv 2026.03](https://arxiv.org/pdf/2603.01343)] PanCanBench: A Comprehensive Benchmark for Evaluating Large Language Models in Pancreatic Oncology [[Code](https://github.com/YiminZhao97/PanCanBench)] [[Data](https://huggingface.co/datasets/YiminZ07/PanCanBench)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Alignment&amp;color=9B6B6B&amp;style=flat-square" alt="Alignment">
 - [[arXiv 2026.03](https://arxiv.org/abs/2603.25133)] RubricEval: A Rubric-Level Meta-Evaluation Benchmark for LLM Judges in Instruction Following <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Alignment&amp;color=9B6B6B&amp;style=flat-square" alt="Alignment">
 - 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.01562)] RubricBench: Aligning Model-Generated Rubrics with Human Standards [[Code](https://github.com/planepig/rubricbench)] <br>
