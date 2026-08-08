@@ -583,6 +583,8 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 > Self-evolving learning methods let rubrics change during training, using model failures, self-play, memory, or feedback to raise or adjust standards.
 
 ###### 2026
+- 🌟 [[arXiv 2026.08](https://arxiv.org/abs/2608.02831)] Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning [[Proj](https://audiorubrics.github.io)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Self-Evolving%20Learning&amp;color=5F6F89&amp;style=flat-square" alt="Self-Evolving Learning"> <img src="https://img.shields.io/static/v1?label=&amp;message=Text%20%2B%20Audio&amp;color=6B8F8F&amp;style=flat-square" alt="Text + Audio">
 - [[arXiv 2026.02](https://arxiv.org/abs/2602.20751)] SibylSense: Adaptive Rubric Learning via Memory Tuning and Adversarial Probing <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Rubric%20Grader%20Analysis&amp;color=8A7A5F&amp;style=flat-square" alt="Rubric Grader Analysis"> <img src="https://img.shields.io/static/v1?label=&amp;message=Self-Evolving%20Learning&amp;color=5F6F89&amp;style=flat-square" alt="Self-Evolving Learning">
 - 🌟 [[arXiv 2026.02](https://arxiv.org/abs/2602.10885)] Reinforcing Chain-of-Thought Reasoning with Self-Evolving Rubrics [[Proj](https://alphalab-ustc.github.io/rlcer-alphalab/)] <br>
@@ -1016,6 +1018,8 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 ##### 2026
 
+- 🌟 [[arXiv 2026.08](https://arxiv.org/abs/2608.02831)] Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning [[Proj](https://audiorubrics.github.io)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Self-Evolving%20Learning&amp;color=5F6F89&amp;style=flat-square" alt="Self-Evolving Learning"> <img src="https://img.shields.io/static/v1?label=&amp;message=Text%20%2B%20Audio&amp;color=6B8F8F&amp;style=flat-square" alt="Text + Audio">
 - [[arXiv 2026.03](https://arxiv.org/abs/2603.16889)] Rubric-Guided Fine-tuning of SpeechLLMs for Multi-Aspect, Multi-Rater L2 Reading-Speech Assessment <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Text%20%2B%20Audio&amp;color=6B8F8F&amp;style=flat-square" alt="Text + Audio">
 
