@@ -767,9 +767,9 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 
 ##### 2025
 
-- [[arXiv 2025.10](https://arxiv.org/abs/2510.02190)] A Rigorous Benchmark with Multidimensional Evaluation for Deep Research Agents: From Answers to Reports [[Code](https://github.com/EVIGBYEN/DrBench)] <br>
-  <img src="https://img.shields.io/static/v1?label=&amp;message=Deep%20Research&amp;color=4C8FA3&amp;style=flat-square" alt="Deep Research">
 - 🌟 [[arXiv 2025.12](https://arxiv.org/abs/2512.17776)] DEER: A Benchmark for Evaluating Deep Research Agents on Expert Report Generation [[Code](https://github.com/hanjanghoon/DEER)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Deep%20Research&amp;color=4C8FA3&amp;style=flat-square" alt="Deep Research">
+- [[arXiv 2025.10](https://arxiv.org/abs/2510.02190)] A Rigorous Benchmark with Multidimensional Evaluation for Deep Research Agents: From Answers to Reports [[Code](https://github.com/EVIGBYEN/DrBench)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Deep%20Research&amp;color=4C8FA3&amp;style=flat-square" alt="Deep Research">
 - 🌟 [[ICLR 26](https://openreview.net/forum?id=ErnvfmSX0P)] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents [[Proj](https://labs.scale.com/papers/researchrubrics)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Deep%20Research&amp;color=4C8FA3&amp;style=flat-square" alt="Deep Research">
