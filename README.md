@@ -513,6 +513,8 @@ Overall, this structure follows the lifecycle of rubric-based large-model alignm
 > Credit assignment methods distribute rubric feedback from a final answer to intermediate steps, tokens, stages, or features so training receives denser supervision.
 
 ###### 2026
+- 🌟 [[arXiv 2026.09](https://arxiv.org/abs/2609.04094)] DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training [[Code](https://github.com/IBM/draco)] <br>
+  <img src="https://img.shields.io/static/v1?label=&amp;message=Credit%20Assignment&amp;color=64748B&amp;style=flat-square" alt="Credit Assignment"> <img src="https://img.shields.io/static/v1?label=&amp;message=General%20Agentic&amp;color=8B6F9F&amp;style=flat-square" alt="General Agentic">
 - 🌟 [[arXiv 2026.04](https://arxiv.org/abs/2604.02795)] Rubrics to Tokens: Bridging Response-level Rubrics and Token-level Rewards in Instruction Following Tasks [[Code](https://github.com/TURLEing/Rubrics-To-Tokens)] <br>
   <img src="https://img.shields.io/static/v1?label=&amp;message=Credit%20Assignment&amp;color=64748B&amp;style=flat-square" alt="Credit Assignment">
 - 🌟 [[arXiv 2026.03](https://arxiv.org/abs/2603.03800)] A Rubric-Supervised Critic from Sparse Real-World Outcomes [[Code](https://github.com/OpenHands/critic-rubrics)] <br>
